@@ -1,0 +1,175 @@
+/* ==========================================================================
+   WooCommerce cart styles
+   ========================================================================== */
+
+#qodef-woo-page {
+    &.qodef--cart {
+        .shop_table {
+            td {
+                &.product-remove {
+                    position: relative;
+                    width: 35px;
+
+                    a {
+                        @include qodefWooRemoveProductButton();
+                    }
+                }
+
+                &.product-thumbnail {
+                    padding: 15px 0 15px 12px;
+                    width: 95px;
+
+                    a, img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+
+                &.product-name {
+                    padding: 15px 0 15px 12px;
+                    text-align: left;
+
+                    a {
+                        @include qodefWooTableLabelsStyle()
+                    }
+
+                    .variation {
+                        color: $first-color;
+
+                        dd {
+                            display: inline-flex;
+                            margin: 0;
+                        }
+
+                        dt {
+                            display: inline-flex;
+                        }
+                    }
+
+                }
+
+                label,
+                .amount {
+                    @include qodefWooTableLabelsStyle();
+                }
+
+                &.product-quantity {
+                    input[type="number"] {
+                        margin: 0;
+                    }
+                }
+
+                &.actions {
+                    padding: 30px 0 0;
+                    text-align: initial;
+
+                    .coupon {
+                        align-items: flex-start;
+                        display: flex;
+                        flex-wrap: wrap;
+                        float: left;
+                        position: relative;
+                        width: 70%;
+
+                        > * {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    label {
+                        display: none;
+                    }
+
+                    input[type="text"] {
+                        margin-right: 20px;
+                        width: auto;
+
+                        .qodef-browser--ms-explorer & {
+                            padding: 14px 21px;
+                        }
+                    }
+
+                    > .button {
+                        float: right;
+                    }
+                }
+            }
+
+            &.cart {
+                tbody {
+                    > tr {
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cart-collaterals {
+            .shop_table {
+                th {
+                    width: 20%;
+                }
+            }
+        }
+
+        .cross-sells,
+        .cart_totals {
+            margin-top: 100px;
+
+            > h2 {
+                @include qodefWooTemplatesHeadingStyle(0 0 20px);
+
+                text-transform: capitalize;
+            }
+
+            .order-total {
+                .amount {
+                    @include qodefWooLabelsHeadingStyle();
+                }
+            }
+
+            .woocommerce-shipping-destination {
+                margin: 10px 0 5px 0;
+            }
+        }
+
+        .shipping-calculator-form {
+            select {
+                @include qodefWooSelect2Style(100%);
+            }
+        }
+
+        .wc-proceed-to-checkout {
+            margin-top: 20px;
+
+            .button {
+                @include qodefWooButtonsStyle(normal);
+            }
+        }
+    }
+}
+
+// This is temporary solution, we already asked support to add additional hooks inside this template in order to modify it and to move this css inside #qodef-woo-page
+.woocommerce-page {
+    div.woocommerce {
+        > .cart-empty {
+            @include qodefWooTemplatesHeadingStyle();
+
+            align-items: center;
+            border: none;
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        > .return-to-shop {
+            margin: 20px 0 35px;
+            text-align: center;
+
+            a {
+                @include qodefWooButtonsStyle(normal);
+            }
+        }
+    }
+}

@@ -1,0 +1,261 @@
+/* ==========================================================================
+   WooCommerce global styles
+   ========================================================================== */
+@import 'woo-mixins';
+
+#qodef-woo-page {
+    margin-bottom: 35px;
+}
+
+#qodef-woo-page,
+.qodef-woo-shortcode {
+    .qodef-woo-product-mark {
+        background-color: $first-color;
+        color: #ffffff;
+        font-family: $script-font;
+        font-size: 22px;
+        line-height: 1;
+        padding: 19px 15px 23px 15px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 5;
+    }
+
+    .qodef-woo-product-title {
+        margin: 0;
+    }
+
+    .qodef-woo-ratings {
+        @include qodefWooRatingsStyle();
+    }
+
+    .price {
+        @include qodefWooPriceStyle();
+    }
+
+    .qodef-woo-buttons-holder {
+        display: flex;
+
+        a {
+            margin: 0 5px;
+        }
+
+        .add_to_cart_button,
+        .added_to_cart,
+        .product_type_grouped,
+        .product_type_external,
+        .product_type_simple,
+        .product_type_variable {
+            margin-left: 0;
+
+            &.added {
+                display: none;
+            }
+        }
+
+        .add_to_cart_button {
+            @include qodefWooButtonsListStyle(qodefSVG('cart-add'), $first-color, $first-color-hover);
+        }
+
+        .added_to_cart,
+        .product_type_grouped,
+        .product_type_external,
+        .product_type_simple:not(.add_to_cart_button),
+        .product_type_variable {
+            @include qodefWooButtonsListStyle(qodefSVG('cart-view'), $first-color, $first-color-hover);
+
+            &:before {
+                background-color: $first-color;
+            }
+        }
+    }
+}
+
+#qodef-woo-page {
+    .quantity {
+        white-space: nowrap;
+
+        input[type="number"] {
+            margin: 0;
+            padding: 12px 10px;
+            text-align: center;
+            width: 60px;
+
+            @include qodefWooLabelsHeadingStyle();
+        }
+    }
+}
+
+#qodef-woo-page,
+.qodef-woo-shortcode,
+.woocommerce {
+    table {
+        tr {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+
+        th {
+            border: none;
+        }
+
+        td {
+            border: none;
+        }
+    }
+}
+
+// This is temporary solution, we already asked support to add additional hooks inside this template in order to modify it and to move this css inside #qodef-woo-page
+.woocommerce-page {
+    div.woocommerce {
+        .woocommerce-message,
+        .woocommerce-info,
+        .woocommerce-error {
+            @include qodefWooNoticeStyle();
+
+            .restore-item {
+                padding: 0;
+            }
+        }
+
+        .shop_table {
+            th, td {
+                padding: 15px 0 15px 5px;
+                text-align: left;
+                vertical-align: middle;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+
+            th {
+                @include qodefWooLabelsHeadingStyle();
+            }
+
+            td {
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        margin: 0 0 10px;
+                        padding: 0;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        label {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .col2-set {
+            align-items: flex-start;
+            display: flex;
+            margin: 0 -#{$default-grid-gutter-size}px;
+            position: relative;
+
+            > * {
+                margin-bottom: #{2 * $default-grid-gutter-size}px;
+                padding: 0 #{$default-grid-gutter-size}px;
+                width: 100%;
+            }
+        }
+
+        address {
+            font-style: normal;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        form {
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .woocommerce-shipping-methods {
+        li {
+            display: flex;
+
+            input {
+                margin: 7px 10px;
+            }
+        }
+    }
+
+    .pswp__button--arrow--left:before,
+    .pswp__button--arrow--right:before,
+    .pswp__button.pswp__button--close,
+    .pswp__button.pswp__button--zoom,
+    .pswp__button.pswp__button--fs {
+        background: none !important;
+    }
+
+    .pswp__button--arrow--left:before,
+    .pswp__button--arrow--right:before,
+    .pswp__button.pswp__button--close:before,
+    .pswp__button.pswp__button--zoom:before,
+    .pswp__button.pswp__button--fs:before {
+        background: none;
+        border: 0;
+        color: #fff;
+        font-family: 'ElegantIcons';
+    }
+
+    .pswp__button--arrow--left:before {
+        content: '\34';
+        font-size: 45px;
+        width: auto;
+    }
+
+    .pswp__button--arrow--right:before {
+        content: '\35';
+        font-size: 45px;
+        width: auto;
+    }
+
+    .pswp__button.pswp__button--close:before {
+        content: '\4d';
+        font-size: 17px;
+    }
+
+    .pswp__button.pswp__button--zoom:before {
+        content: '\54';
+        font-size: 17px;
+    }
+
+    .pswp--zoomed-in .pswp__button.pswp__button--zoom:before {
+        content: '\53';
+        font-size: 17px;
+    }
+
+    .pswp__button.pswp__button--fs:before {
+        content: '\30';
+        font-size: 17px;
+    }
+
+    .pswp__counter,
+    .pswp__caption__center {
+        color: #ffffff;
+        font-family: $text-font;
+        font-size: $text-font-size;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+}

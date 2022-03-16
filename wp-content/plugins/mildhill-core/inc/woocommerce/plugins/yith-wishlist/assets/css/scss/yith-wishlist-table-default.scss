@@ -1,0 +1,127 @@
+/* ==========================================================================
+   YITH Wish List table default styles
+   ========================================================================== */
+
+#yith-wcwl-form {
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+        @include qodefWooNoticeStyle(false);
+    }
+
+    .wishlist-title {
+        display: none;
+    }
+
+    .shop_table {
+        font-size: inherit;
+
+        tfoot {
+            tr {
+                border: none;
+            }
+        }
+
+        th, td {
+            padding: 15px 0 15px 5px;
+            text-align: left;
+            vertical-align: middle;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        th {
+            border: none;
+
+            @include qodefWooLabelsHeadingStyle();
+        }
+
+        td {
+            &.product-remove {
+                width: 30px;
+
+                a {
+                    @include qodefWooRemoveProductButton();
+                }
+            }
+
+            &.product-stock-status {
+                span {
+                    color: $first-color;
+                }
+            }
+
+            &.product-thumbnail {
+                padding-right: 10px;
+                width: 95px;
+
+                a, img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &.product-name {
+                text-align: left;
+
+                a {
+                    //@include qodefWooLabelsHeadingStyle(false);
+                    @include qodefWooTableLabelsStyle();
+                }
+            }
+
+            &.product-price,
+            &.product-subtotal {
+                @include qodefWooTableLabelsStyle();
+                //@include qodefWooPriceStyle();
+
+                display: table-cell;
+
+                ins {
+                    text-decoration: none;
+                }
+            }
+
+            &.product-stock-status {
+
+            }
+
+            &.product-add-to-cart {
+                text-align: right;
+
+                a {
+                    @include qodefWooButtonsStyle();
+
+                    display: inline-block !important;
+
+                    &.remove_from_wishlist {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+
+        .yith-wcwl-share {
+            display: none;
+        }
+
+        .qodef-social-share {
+            @include qodefIconCircleRainbow();
+
+            display: flex;
+            margin: 23px 0 9px 0;
+
+            .qodef-social-title {
+                margin-right: 13px;
+
+                @include qodefWooLabelsHeadingStyle();
+            }
+
+            .qodef-shortcode-list {
+                top: -7px;
+            }
+        }
+    }
+}

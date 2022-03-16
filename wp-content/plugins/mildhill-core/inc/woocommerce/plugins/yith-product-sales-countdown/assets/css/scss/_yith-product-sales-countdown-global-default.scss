@@ -1,0 +1,71 @@
+/* ==========================================================================
+   YITH Countdown global default styles
+   ========================================================================== */
+
+$single-width: 60%;
+
+%holder-common {
+    background-color: $second-color;
+}
+
+.ywpc {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // common
+
+    &-label {
+        text-transform: initial !important;
+
+        @include qodefParagraphStyle(#ffffff, !important);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // archive
+
+    &-countdown-loop,
+    &-sale-bar-loop {
+        margin: 0;
+
+        @extend %holder-common;
+
+        .ywpc-header {
+            display: none !important;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // single
+
+    &-countdown,
+    &-sale-bar {
+        @extend %holder-common;
+
+        border: none;
+        margin: 0 0 1px 0;
+        padding: 0;
+
+        .ywpc-header {
+            @include qodefHeadingStyle(h6, false);
+            .qodef-browser--ms-explorer & {
+                text-transform: none;
+            }
+
+            color: #ffffff;
+            padding: 0 23px 0 23px;
+            text-align: left;
+            width: 100% - $single-width;
+        }
+    }
+
+    &-countdown {
+        .ywpc-timer {
+            width: $single-width;
+        }
+    }
+
+    &-sale-bar {
+        .ywpc-bar {
+            width: $single-width;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.qodef-opener-widget {
+  display: flex;
+  font-size: $opener-widget-size;
+  height: $opener-widget-size;
+  line-height: 1em;
+  position: relative;
+
+
+  .qodef {
+    &-m-icon,
+    &-m-label {
+      display: flex;
+      height: 100%;
+    }
+
+    &-m-label {
+      margin-left: 10px;
+    }
+  }
+
+  // sources
+
+  &--icon-pack {
+    .qodef-m-icon {
+      * {
+        display: flex;
+        line-height: inherit;
+
+        &:before {
+          display: flex;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+
+  &--svg-path,
+  &--predefined {
+
+    svg {
+      fill: currentColor;
+      height: 100%;
+      stroke: currentColor;
+      transition: $fill-transition;
+    }
+
+    > * {
+      display: flex;
+      line-height: inherit;
+    }
+  }
+
+  // predefined closing
+
+  &--predefined {
+    &[id*="close"] {
+      &:before {
+        transition: $background-color-transition;
+      }
+
+      &:hover {
+        &:before {
+          background-color: $third-color-darken !important;
+        }
+      }
+    }
+  }
+}

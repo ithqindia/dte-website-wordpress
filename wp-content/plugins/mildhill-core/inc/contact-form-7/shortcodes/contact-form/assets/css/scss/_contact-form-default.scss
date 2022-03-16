@@ -1,0 +1,78 @@
+.qodef-contact-form {
+  @include qodefRelativeLayout();
+
+  .qodef-m-title {
+    margin: 0 0 25px 0;
+  }
+
+  &.qodef-has-svg {
+    .qodef-m-outer {
+      background-image: url('data:image/svg+xml;base64,#{qodefSVG('contact-form')}');
+      background-size: cover;
+    }
+  }
+
+  &.qodef-has-image {
+    background-size: cover;
+  }
+
+  &.qodef-has-svg,
+  &.qodef-has-image {
+    form {
+      input[type=text],
+      input[type=email],
+      input[type=url],
+      input[type=password],
+      input[type=number],
+      input[type=tel],
+      textarea {
+        background-color: #ffffff;
+        color: rgba(70, 69, 71, .5);
+      }
+    }
+  }
+
+  &.qodef-form-align {
+    &--left {
+      form {
+        input[type=text],
+        input[type=email],
+        input[type=url],
+        input[type=password],
+        input[type=number],
+        input[type=tel],
+        textarea {
+          text-align: left;
+        }
+      }
+    }
+
+    &--center {
+      form {
+        input[type=text],
+        input[type=email],
+        input[type=url],
+        input[type=password],
+        input[type=number],
+        input[type=tel],
+        textarea {
+          text-align: center;
+        }
+      }
+    }
+
+    &--right {
+      form {
+        input[type=text],
+        input[type=email],
+        input[type=url],
+        input[type=password],
+        input[type=number],
+        input[type=tel],
+        textarea {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

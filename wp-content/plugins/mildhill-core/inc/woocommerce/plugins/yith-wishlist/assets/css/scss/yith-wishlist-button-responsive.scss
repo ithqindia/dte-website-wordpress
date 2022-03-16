@@ -1,0 +1,30 @@
+/* ==========================================================================
+   YITH Wish List button responsive styles
+   ========================================================================== */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// on quick view modal
+
+#yith-quick-view-modal {
+    .summary {
+
+        @include qodefScreenSize480 {
+            .yith-wcwl-add-to-wishlist {
+                display: none;
+            }
+            .cart{
+                button{
+                    padding: 11px 17px;
+                }
+            }
+        }
+
+        @include qodefScreenSize768{
+            .cart{
+                button{
+                    padding: 11px 22px;
+                }
+            }
+        }
+    }
+}

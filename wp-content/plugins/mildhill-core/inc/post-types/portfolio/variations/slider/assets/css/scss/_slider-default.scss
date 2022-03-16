@@ -1,0 +1,22 @@
+.qodef-postfolio-single-slider.qodef-media.qodef-swiper-container {
+
+    .swiper-slide {
+        width: $content-grid-width-1100;
+
+        @each $key, $values in $content-grid-width-map {
+            @media only screen and (min-width: map-deep-get($content-grid-width-map, $key, 'responsive-break')) {
+                .qodef-content-grid-#{$key} & {
+                    width: map-deep-get($content-grid-width-map, $key, 'content-grid-width');
+                }
+            }
+        }
+
+        img {
+            padding: 0 5px;
+        }
+    }
+}
+
+.qodef-portfolio-single-layout--slider .qodef-portfolio-single-item {
+    margin-top: 15px;
+}

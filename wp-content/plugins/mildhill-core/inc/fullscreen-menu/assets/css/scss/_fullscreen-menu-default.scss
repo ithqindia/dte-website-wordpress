@@ -1,0 +1,246 @@
+.qodef-fullscreen-menu-opener {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    .qodef-header--minimal.qodef-fullscreen-menu--opened & {
+
+        .qodef-m-open-icon {
+            display: none;
+        }
+    }
+
+    .qodef-m-open-icon {
+        position: relative;
+        visibility: visible;
+    }
+
+    .qodef-m-close-icon {
+        visibility: hidden;
+        position: absolute;
+    }
+
+}
+
+.qodef-header--minimal {
+    &.qodef-fullscreen-menu--opened {
+        .qodef-fullscreen-menu-opener {
+            &.qodef-opener-widget--predefined {
+                @include qodefFullscreenIconCircleOpenerWidget(true, false);
+            }
+        }
+    }
+    &:not(.qodef-fullscreen-menu--opened) {
+        .qodef-fullscreen-menu-opener {
+            &.qodef-opener-widget--predefined {
+                @include qodefFullscreenIconCircleOpenerWidget(false, true);
+            }
+        }
+    }
+}
+
+.qodef-fullscreen-menu-holder {
+    background-color: $overlay-color;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow-x: hidden !important;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 99; /* smaller than header, bigger than content */
+
+    .qodef-fullscreen-menu-holder-inner {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .qodef-content-grid {
+        height: 100%;
+
+        nav.qodef-fullscreen-menu {
+            width: 100%;
+        }
+    }
+
+    nav.qodef-fullscreen-menu {
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        top: 0;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            li {
+                margin: 0;
+                padding: 0;
+
+                a {
+                    color: #ffffff;
+                    display: inline-block;
+                    margin: 14px 0;
+                    padding: 0 9px;
+
+                    @include qodefHeadingStyle('h2', false);
+
+                    position: relative;
+                    transition: $color-transition, $background-color-transition;
+                    vertical-align: middle;
+
+                    @media only screen and (min-width: $screen-size-1025) {
+                        &:hover {
+                            color: $second-color;
+                        }
+                    }
+
+                    @include qodefScreenSize1024() {
+                        font-size: 35px;
+                    }
+                }
+
+                &.current-menu-ancestor > a,
+                &.current-menu-item > a {
+                    color: $second-color;
+                }
+
+                &.menu-item-has-children {
+                    > a {
+                        &:after {
+                            color: currentColor;
+                            content: '\33';
+                            font-family: eleganticons;
+                            font-size: 24px;
+                            line-height: inherit;
+                            margin: 7px 0 0 5px;
+                            position: absolute;
+                        }
+                    }
+                }
+
+                ul {
+                    padding: 10px 0 23px;
+
+                    &.sub-menu {
+                        display: none;
+                    }
+
+                    li {
+                        &.current-menu-ancestor > a,
+                        &.current-menu-item > a {
+                            color: $second-color;
+                        }
+
+                        a {
+                            margin: 5px 0;
+
+                            @include qodefHeadingStyle('h4', false, false);
+
+                            &:hover {
+                                color: $second-color;
+                            }
+                        }
+
+                        ul {
+                            li a {
+                                font-size: 16px;
+                            }
+                        }
+
+                        &:last-child {
+                            ul {
+                                &:last-child {
+                                    padding-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.qodef-fullscreen-menu--opened {
+    .qodef-fullscreen-menu-opener {
+        .qodef-m-open-icon {
+            visibility: hidden;
+        }
+
+        .qodef-m-close-icon {
+            visibility: visible;
+            //left: -1em;
+        }
+
+        &.qodef-fullscreen-menu-opener--predefined {
+            color: #fff;
+        }
+    }
+
+    #qodef-page-header,
+    #qodef-page-mobile-header {
+        visibility: hidden;
+    }
+
+    .qodef-header-logo-link,
+    .qodef-mobile-header-logo-link,
+    .qodef-header-logo-image.qodef--customizer,
+    .qodef-fullscreen-menu-opener {
+        visibility: visible;
+    }
+
+    #qodef-page-header .qodef-header-logo-link img {
+        &.qodef--light {
+            opacity: 1;
+        }
+
+        &.qodef--main,
+        &.qodef--dark {
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes fullscreen-fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
+@keyframes fullscreen-fade-in {
+    0% {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible
+    }
+}
+
+.qodef-fullscreen-menu-animate--in {
+    .qodef-fullscreen-menu-holder {
+        animation: fullscreen-fade-in .25s linear both;
+    }
+}
+
+.qodef-fullscreen-menu-animate--out {
+    .qodef-fullscreen-menu-holder {
+        animation: fullscreen-fade-out .25s linear both;
+    }
+}

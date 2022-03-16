@@ -1,0 +1,27 @@
+/* ==========================================================================
+   YITH Quick View Modal responsive styles
+   ========================================================================== */
+
+body {
+    #yith-quick-view-modal {
+        @include qodefScreenSize680 {
+            .yith-wcqv-wrapper {
+                max-width: 75%;
+            }
+        }
+
+        @include qodefScreenSize480 {
+            .yith-wcqv-wrapper {
+                max-width: 85%;
+            }
+
+            .yith-wcqv-main {
+                padding: 35px;
+            }
+
+            .qodef-woo-product-title {
+                font-size: 25px;
+            }
+        }
+    }
+}

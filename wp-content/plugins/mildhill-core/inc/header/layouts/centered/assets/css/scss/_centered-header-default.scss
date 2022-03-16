@@ -1,0 +1,49 @@
+/* Centered header style - start */
+
+.qodef-header--centered {
+    #qodef-page-header {
+        height: 277px;
+
+        .qodef-header-logo-link {
+            .qodef-browser--ms-explorer & {
+                height: 100%;
+            }
+            height: auto;
+
+            .qodef-header-logo-image {
+                margin: 0 auto;
+            }
+        }
+
+        .qodef-header-navigation {
+            min-height: 76px;
+
+        }
+    }
+
+    #qodef-page-header-inner {
+        flex-direction: column;
+        justify-content: center;
+
+        .qodef-header-navigation-holder {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+        .qodef-header-centered-holder {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+
+/* Centered header style - end */

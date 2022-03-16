@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Mobile Header styles
+   ========================================================================== */
+#qodef-mobile-header-navigation {
+	
+	ul {
+		
+		li {
+			
+			.qodef-menu-arrow {
+				display: none;
+			}
+			
+			&.qodef-hide-link > a {
+				// cursor: default;
+			}
+			
+			&.menu-item-has-children {
+				
+				& > .qodef-menu-arrow {
+					position: absolute;
+					top: 3px;
+					right: 0;
+					display: block;
+					width: 30px;
+					height: 30px;
+					font-size: 20px;
+					line-height: 28px;
+					cursor: pointer;
+					
+					&:after {
+						color: inherit;
+						display: block;
+						line-height: inherit;
+						content: '\35';
+						font-family: ElegantIcons;
+						font-style: normal;
+						text-align: center;
+						transition: transform 0.3s ease;
+						transform-origin: center center;
+					}
+				}
+				
+				&.qodef--opened {
+					
+					> .qodef-menu-arrow:after {
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+	}
+}

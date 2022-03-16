@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+    @include qodefRelativeLayout();
+    @include qodefNavigationPaginationBorder();
+
+    margin: 52px 0 3px;
+
+    .qodef-m-inner {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .qodef-m-nav {
+        align-items: center;
+        display: flex;
+        position: relative;
+
+        > * {
+            display: block;
+            line-height: inherit;
+        }
+
+        &.qodef--prev {
+            .qodef-icon-elegant-icons {
+                margin-right: 19px;
+            }
+        }
+
+        &.qodef--next {
+            flex-direction: row-reverse;
+            margin-left: auto;
+            text-align: right;
+
+            .qodef-icon-elegant-icons {
+                margin-left: 19px;
+            }
+        }
+
+        &:hover {
+            .qodef-icon-elegant-icons {
+                background-color: $first-color;
+            }
+        }
+
+        &.qodef--back-to-link {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            @include qodefSinglePostNavigation();
+        }
+    }
+
+    .qodef-icon-elegant-icons {
+        @include qodefNavigationPaginationCircle();
+    }
+
+    .qodef-m-nav-label {
+        @include qodefSinglePostNavigation();
+    }
+}

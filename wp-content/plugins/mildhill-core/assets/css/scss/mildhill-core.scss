@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Include variables and mixins
+   ========================================================================== */
+@import '../../../../../themes/mildhill/assets/css/scss/variables';
+@import '../../../../../themes/mildhill/assets/css/scss/grid-variables';
+@import '../../../../../themes/mildhill/assets/css/scss/mixins';
+@import '../../../../../themes/mildhill/assets/css/scss/shortcodes-mixins';
+
+/* ========================================================================== */
+
+@import 'parts/*-default.scss';
+@import '../../../inc/**/assets/css/scss/**/*-default.scss';
+@import '../../../inc/**/assets/css/scss/**/*-responsive.scss';

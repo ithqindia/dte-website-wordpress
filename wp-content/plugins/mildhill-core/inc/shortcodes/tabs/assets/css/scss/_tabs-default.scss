@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Tabs shortcode styles
+   ========================================================================== */
+
+.qodef-tabs {
+    @include qodefRelativeLayout();
+
+    visibility: hidden;
+
+    &.qodef--init {
+        visibility: visible;
+    }
+
+    .qodef-tabs-navigation {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .qodef-tabs-content {
+        @include qodefRelativeLayout();
+
+        p {
+            margin: 0;
+        }
+    }
+}

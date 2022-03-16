@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.widget {
+    .qodef-blog {
+        &.qodef-item-layout--simple {
+            article {
+                .qodef-e-media-image {
+                    width: 81px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        margin-bottom: 0 !important;
+    }
+}

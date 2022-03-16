@@ -1,0 +1,41 @@
+/* ==========================================================================
+   YITH Countdown counter default styles
+   ========================================================================== */
+
+.ywpc {
+    &-days,
+    &-hours,
+    &-minutes,
+    &-seconds {
+        margin: 0 !important;
+        padding: 15px 0px 15px 0px;
+        vertical-align: middle;
+        width: 25% !important;
+
+        .ywpc-label {
+            text-transform: capitalize !important;
+        }
+    }
+
+    &-hours,
+    &-minutes,
+    &-seconds {
+        border-left: 1px solid #ffffff;
+    }
+
+    &-amount {
+        line-height: 1em;
+
+        > span {
+            @include qodefParagraphStyle(#ffffff, !important);
+
+            background-color: transparent !important;
+            border: none !important;
+            height: auto !important;
+            line-height: 1em !important;
+            margin: 0 !important;
+            vertical-align: middle;
+            width: auto !important;
+        }
+    }
+}

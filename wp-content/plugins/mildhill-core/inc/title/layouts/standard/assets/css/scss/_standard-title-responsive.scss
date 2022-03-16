@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Standard Title layout responsive styles
+   ========================================================================== */
+
+.qodef-page-title {
+    &.qodef-title--standard {
+        &.qodef-title-text--center {
+            .qodef-m-subtitle {
+                @include qodefScreenSize1600 {
+                    width: 40%;
+                }
+
+                @include qodefScreenSize1440 {
+                    width: 50%;
+                }
+
+                @include qodefScreenSize1366 {
+                    width: 60%;
+                }
+
+                @include qodefScreenSize1280 {
+                    width: 70%;
+                }
+
+                @include qodefScreenSize1024 {
+                    width: 80%;
+                }
+
+                @include qodefScreenSize768 {
+                    width: 90%;
+                }
+
+                @include qodefScreenSize680 {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

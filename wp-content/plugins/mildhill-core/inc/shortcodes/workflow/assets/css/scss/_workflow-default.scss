@@ -1,0 +1,215 @@
+.qodef-workflow {
+    @include qodefRelativeLayout();
+
+    .qodef-m-workflow-item {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -42px;
+        max-width: 94%;
+        padding-bottom: 0;
+        position: relative;
+
+        .qodef-m-workflow-image {
+            opacity: 0;
+            transform: scale(.8);
+        }
+
+        .qodef-m-text, .qodef-m-title {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        &.qodef--appear {
+
+            .qodef-m-workflow-image {
+                opacity: 1;
+                transform: scale(1);
+                transition: .4s;
+            }
+
+            .qodef-m-text {
+                opacity: 1;
+                transform: translateY(0);
+                transition: .4s .1s;
+            }
+
+            .qodef-m-title {
+                opacity: 1;
+                transform: translateY(0);
+                transition: .4s .2s;
+            }
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            .qodef-m-workflow-item-inner {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        &:not(:first-child) {
+            .qodef-m-workflow-item-inner {
+                &:before {
+                    top: 20%;
+                }
+            }
+        }
+
+        .qodef-m-workflow-item-inner {
+            @include qodefRelativeLayout();
+
+            color: $second-color-light;
+            display: inline-block;
+            width: 50%;
+
+            &:before {
+                background: currentColor;
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                top: 35%;
+                transform: translateX(-50%);
+                width: 2px;
+            }
+
+            .qodef-m-workflow-image {
+                box-sizing: border-box;
+                float: left;
+                margin: 0;
+                padding: 0;
+                width: 50%;
+
+                .qodef-m-workflow-image-inner {
+                    display: inline-block;
+                    border-radius: 50%;
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+
+                &.qodef-has-background {
+                    .qodef-m-workflow-image-inner {
+                        background-color: #ffffff;
+                        border-radius: 50%;
+
+                        img {
+                            border-radius: unset;
+                            position: relative;
+                            right: 15%;
+                        }
+                    }
+                }
+            }
+
+            .qodef-m-workflow-text {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0;
+                padding: 0 47px;
+                width: 50%;
+
+                .qodef-m-circle {
+                    background: $second-color;
+                    border-radius: 50%;
+                    content: '';
+                    height: 14px;
+                    left: 50%;
+                    position: absolute;
+                    top: 35%;
+                    transform: translateX(-50%);
+                    width: 14px;
+                }
+
+                .qodef-m-title {
+                    margin: 0;
+                }
+
+                .qodef-m-text {
+                    margin: 22px 0 12px 0;
+                }
+            }
+        }
+
+        &:nth-of-type(2n+1) {
+            justify-content: flex-end;
+            text-align: right;
+
+            .qodef-m-workflow-image {
+                text-align: left;
+            }
+
+            .qodef-m-workflow-text {
+                align-items: flex-start;
+
+                .qodef-browser--ms-explorer & {
+                    //align-items: start;
+                }
+
+                .qodef-m-title {
+                    text-align: left;
+                }
+
+                .qodef-m-circle {
+                    left: 0;
+                }
+            }
+
+            .qodef-m-workflow-item-inner {
+                display: flex;
+                flex-direction: row-reverse;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+
+                &:before {
+                    left: 0;
+                }
+            }
+        }
+
+        &:nth-of-type(2n) {
+            justify-content: flex-start;
+            text-align: left;
+
+            .qodef-m-workflow-image {
+                text-align: right;
+            }
+
+            .qodef-m-workflow-text {
+                align-items: flex-end;
+
+                .qodef-browser--ms-explorer & {
+                    //
+                    // align-items: end;
+                }
+
+                .qodef-m-title {
+                    text-align: right;
+                }
+
+                .qodef-m-circle {
+                    left: 100%;
+                }
+            }
+
+            .qodef-m-workflow-item-inner {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+
+                &:before {
+                    left: 100%;
+                }
+            }
+        }
+    }
+}

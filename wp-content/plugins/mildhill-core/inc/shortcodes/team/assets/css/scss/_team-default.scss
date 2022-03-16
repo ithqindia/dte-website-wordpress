@@ -1,0 +1,48 @@
+.qodef-team {
+    @include qodefRelativeLayout();
+
+    .qodef-m-image {
+        @include qodefRelativeLayout();
+
+        img {
+            border-radius: 100%;
+        }
+
+        .qodef-team-link {
+            @include qodefAbsoluteLayout();
+        }
+    }
+
+    .qodef-m-team-info {
+        @include qodefRelativeLayout();
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0 0;
+
+        .qodef-m-name {
+            margin: 0;
+        }
+
+        .qodef-m-position {
+            margin: 4px 0 0;
+        }
+
+        .qodef-m-text {
+            margin: 10px 0 0;
+        }
+
+        .qodef-m-social-icons-group {
+            margin: 22px 0 0;
+
+            > span {
+                @include qodefSocialIconRainbow();
+            }
+
+            .qodef-icon-holder {
+                margin: 0 5px;
+            }
+        }
+    }
+}

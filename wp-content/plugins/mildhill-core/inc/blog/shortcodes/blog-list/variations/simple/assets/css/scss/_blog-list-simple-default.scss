@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Blog List Simple styles
+   ========================================================================== */
+
+.qodef-blog {
+    &.qodef-item-layout--simple {
+        article {
+            .qodef-e-inner {
+                align-items: flex-start;
+                display: flex;
+            }
+
+            .qodef-e-media-image {
+                flex-shrink: 0;
+                margin: 0 20px 0 0;
+                width: 120px;
+            }
+
+            .qodef-e-info {
+                &.qodef-info--bottom {
+                    margin-top: 5px;
+
+                    @include qodefHandwrittenStyle();
+                }
+            }
+        }
+    }
+}

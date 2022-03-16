@@ -1,0 +1,14 @@
+/* ==========================================================================
+   WooCommerce results and ordering styles
+   ========================================================================== */
+.qodef-woo-results {
+    @include qodefScreenSize680 {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .woocommerce-ordering {
+        margin-left: 0;
+    }
+}

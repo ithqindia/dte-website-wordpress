@@ -1,0 +1,54 @@
+/* ==========================================================================
+   YITH Quick View Modal default styles
+   ========================================================================== */
+
+body {
+  #yith-quick-view-modal {
+    .yith-quick-view-overlay {
+      background-color: $overlay-color;
+    }
+
+    .yith-wcqv-wrapper {
+      height: auto !important;
+      max-width: 90%;
+      padding: 0;
+      width: 744px !important;
+    }
+
+    .yith-wcqv-main {
+      @include qodefRelativeLayout();
+
+      background-color: transparent;
+      background-image: url('data:image/svg+xml;base64,#{qodefSVG('horizontal-modal')}');
+      background-size: cover;
+      box-shadow: none;
+      overflow-y: visible !important;
+      padding: 65px 50px;
+    }
+
+    #yith-quick-view-close {
+      background-color: $third-color;
+      background-image: url('data:image/svg+xml;base64,#{qodefSVG('close')}');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: $closer-widget-size $closer-widget-size;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: block;
+      font-size: 0;
+      height: $closer-widget-size * 3;
+      opacity: 1;
+      position: absolute;
+      right: 24px;
+      top: -5px;
+      transition: $background-color-transition;
+      width: $closer-widget-size * 3;
+      z-index: 100;
+
+      &:hover {
+        background-color: $third-color-darken;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Reviews responsive styles
+   ========================================================================== */
+
+.woocommerce-Reviews {
+    @include qodefScreenSize480 {
+        .comment,
+        .review {
+            .comment_container {
+                flex-wrap: wrap;
+            }
+
+            .comment-text {
+                margin-top: 23px;
+            }
+        }
+    }
+}

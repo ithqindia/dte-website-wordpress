@@ -1,0 +1,344 @@
+/* ==========================================================================
+   YITH Quick View Content default styles
+   ========================================================================== */
+
+body {
+    #yith-quick-view-modal /*,
+    .yith-quick-view.yith-modal*/
+    {
+        [id*="product"] {
+            align-items: flex-start;
+            display: flex;
+            position: relative;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // left side stuff
+
+        .qodef-woo-single-image {
+            @include qodefRelativeLayout();
+
+            width: 326px;
+
+            figure {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+
+                a, img {
+                    background-color: $third-color-light;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .qodef-woo-product-mark {
+                background-color: $first-color;
+                color: #ffffff;
+                font-family: $script-font;
+                font-size: 22px;
+                line-height: 1;
+                padding: 19px 15px 23px 15px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 5;
+            }
+
+            .woocommerce-product-gallery__trigger {
+                background-image: url('data:image/svg+xml;base64,#{qodefSVG('search')}');
+                height: 16px;
+                left: 10px;
+                line-height: 30px;
+                position: absolute;
+                text-align: center;
+                top: 10px;
+                width: 16px;
+                z-index: 5;
+
+                img {
+                    display: none !important;
+                }
+            }
+
+            .zoomImg {
+                cursor: crosshair;
+            }
+        }
+
+        .woocommerce-product-gallery {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+            width: 100% !important;
+        }
+
+        .woocommerce-product-gallery__image {
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 100% !important;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // right side stuff
+
+        .summary {
+            display: inline-block;
+            margin-left: 40px !important;
+            padding: 0 !important;
+            position: relative;
+            vertical-align: top;
+            width: 296px !important;
+        }
+
+        .qodef-woo-product-title {
+            @include qodefHeadingStyle(h3);
+
+            margin: 0;
+        }
+
+        .woocommerce-product-rating {
+            margin-top: 16px;
+        }
+
+        .qodef-woo-ratings {
+            @include qodefWooRatingsStyle();
+        }
+
+        .price {
+            @include qodefWooPriceStyle();
+            @include qodefHeadingStyle(h3, false);
+
+            margin: 3px 0 0 0;
+        }
+
+        .woocommerce-product-details__short-description {
+            margin-top: 16px;
+
+            p {
+                margin-top: 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .qodef-quantity-buttons {
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+
+            .qodef-quantity-input,
+            .qodef-quantity-minus,
+            .qodef-quantity-plus {
+                box-sizing: border-box;
+                display: inline-block;
+                text-align: center;
+                user-select: none;
+                vertical-align: middle;
+            }
+
+            .qodef-quantity-input {
+                background-color: $additional-background-color;
+                color: $heading-color;
+                font-family: $text-font;
+                font-size: 16px;
+                height: 51px;
+                line-height: 48px;
+                margin: 0 28px 0 0;
+                outline: 0;
+                padding: 0;
+                position: relative;
+                width: 54px;
+            }
+
+            .qodef-quantity-minus,
+            .qodef-quantity-plus {
+                background-color: $second-color;
+                border-left: 0;
+                color: #ffffff;
+                cursor: pointer;
+                font-size: 20px;
+                height: 25px;
+                line-height: 25px;
+                position: absolute;
+                right: 0;
+                transition: $background-color-transition;
+                width: 28px;
+
+                span {
+                    line-height: inherit;
+                }
+
+                &:hover {
+                    background-color: $second-color-darken;
+                }
+            }
+
+            .qodef-quantity-plus {
+                border-bottom: 0;
+                top: 0;
+            }
+
+            .qodef-quantity-minus {
+                bottom: 0;
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // form
+
+        form.cart {
+            @include qodefRelativeLayout();
+
+            margin-top: 23px;
+
+            &:not(.variations_form):not(.grouped_form),
+            .variations_button {
+                align-items: flex-start;
+                display: flex;
+
+                .quantity {
+                    margin-right: 6px;
+                }
+            }
+
+            // grouped products
+            &.grouped_form {
+                flex-wrap: wrap;
+
+                .group_table {
+                    tbody {
+                        display: block;
+                    }
+
+                    tr {
+                        border: none;
+                        display: flex;
+                        flex-direction: row;
+                        justify-items: center;
+                        margin-bottom: 10px;
+                        width: 100%;
+                    }
+
+                    th, td {
+                        height: 51px;
+                        padding: 0;
+                        text-align: left;
+                    }
+
+                    .woocommerce-grouped-product-list-item {
+                        &__quantity {
+                            order: 99;
+                            padding-left: 10px;
+                            width: 92px;
+                        }
+
+                        &__label,
+                        &__price {
+                            background-color: $additional-background-color;
+                            color: $heading-color;
+                            padding-left: 13px;
+
+                            * {
+                                line-height: 51px !important;
+                                margin: 0;
+
+                                @include qodefWooLabelsHeadingStyle(false);
+                            }
+                        }
+
+                        &__price {
+                            flex-grow: 10;
+                            padding-right: 13px;
+                        }
+                    }
+                }
+
+                > .button {
+                    width: 100%;
+                }
+            }
+
+            // variable products
+            .variations {
+                margin-bottom: 7px;
+
+                tr {
+                    border-bottom: 0;
+                }
+
+                td, th {
+                    padding: 0;
+                    text-align: initial;
+                    vertical-align: middle;
+                }
+
+                .label {
+                    background: $additional-background-color;
+                    padding: 0 20px;
+                }
+
+                label {
+                    color: $heading-color;
+                    margin-bottom: 0;
+                }
+
+                select {
+                    background-color: $additional-background-color;
+                    border: none;
+                    height: 48px;
+                    outline: none;
+                    width: 100%;
+
+                    @include qodefParagraphStyle($heading-color);
+                }
+
+                .select2-container--default {
+                    margin: 0;
+                    text-align: right;
+
+                    .select2-selection--single {
+                        padding-right: 38px;
+                    }
+                }
+
+                .reset_variations {
+                    display: none !important;
+                }
+            }
+
+            .single_variation {
+                align-items: center;
+                display: flex;
+                margin: 10px 0 13px 0;
+                position: relative;
+
+                .price,
+                .stock {
+                    margin: 0 0 0 16px;
+                    white-space: nowrap;
+
+                    @include qodefHeadingStyle(h6);
+                }
+            }
+
+            .woocommerce-variation-description {
+                @include qodefHeadingStyle(h6);
+            }
+        }
+
+        .out-of-stock {
+            @include qodefWooLabelsHeadingStyle();
+
+            margin: 28px 0 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   YITH Quick View  styles - end
+   ========================================================================== */

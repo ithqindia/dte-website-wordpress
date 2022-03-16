@@ -1,0 +1,13 @@
+.qodef-banner.qodef-layout--type-3 {
+    .qodef-m-content-inner {
+        align-items: center;
+        box-shadow: $box-shadow;
+        flex-direction: column;
+        justify-content: center;
+        padding: 35px;
+
+        .qodef-m-title {
+            text-align: center;
+        }
+    }
+}

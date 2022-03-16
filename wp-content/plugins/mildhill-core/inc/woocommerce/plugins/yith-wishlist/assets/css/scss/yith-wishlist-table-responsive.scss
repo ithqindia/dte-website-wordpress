@@ -1,0 +1,29 @@
+/* ==========================================================================
+   YITH Wish List table responsive styles
+   ========================================================================== */
+#yith-wcwl-form {
+
+    @include qodefScreenSize680 {
+        .shop_table {
+            th {
+                &.product-thumbnail {
+                    display: none;
+                }
+            }
+
+            td {
+                &.product-thumbnail {
+                    display: none;
+                }
+
+                &.product-add-to-cart {
+                    a {
+                        line-height: 1.3em;
+                        padding: 10px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

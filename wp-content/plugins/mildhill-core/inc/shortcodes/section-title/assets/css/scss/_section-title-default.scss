@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+    @include qodefRelativeLayout();
+
+    &.qodef-alignment--center {
+        text-align: center;
+    }
+
+    &.qodef-alignment--left {
+        text-align: left;
+    }
+
+    &.qodef-alignment--right {
+        text-align: right;
+    }
+
+    .qodef-m-title {
+        margin: 0;
+    }
+
+    .qodef-m-text {
+        line-height: 27px;
+        margin: 18px 0 0;
+    }
+}

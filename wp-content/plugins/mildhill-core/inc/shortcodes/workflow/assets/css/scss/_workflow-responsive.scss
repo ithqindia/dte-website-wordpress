@@ -1,0 +1,131 @@
+.qodef-workflow {
+
+    @include qodefScreenSize1024 {
+        .qodef-m-workflow-item {
+            margin-top: 0;
+
+            .qodef-m-workflow-item-inner {
+                padding-bottom: 60px;
+                width: 100%;
+
+                .qodef-m-workflow-image {
+                    text-align: center;
+                }
+            }
+
+            &:nth-of-type(2n) {
+                .qodef-m-workflow-image {
+                    left: 0;
+                }
+
+                .qodef-m-workflow-text {
+                    .qodef-m-text {
+                        text-align: right;
+                    }
+
+                    .qodef-m-title {
+                        text-align: left;
+                    }
+                }
+            }
+
+            &:nth-of-type(2n+1) {
+                .qodef-m-workflow-image {
+                    right: 0;
+                }
+
+                .qodef-m-workflow-text {
+                    .qodef-m-text {
+                        text-align: left;
+                    }
+
+                    .qodef-m-title {
+                        text-align: right;
+                    }
+                }
+            }
+
+            &:not(:first-child) {
+                .qodef-m-workflow-item-inner {
+                    &:before {
+                        top: 40%;
+                    }
+                }
+            }
+        }
+
+        .qodef-m-workflow-item:nth-of-type(2n+1) {
+            .qodef-m-workflow-text {
+                align-items: flex-end;
+
+                .qodef-m-circle {
+                    left: 50%;
+                }
+            }
+
+            .qodef-m-workflow-item-inner {
+                &:before {
+                    left: 50%;
+                }
+            }
+        }
+
+        .qodef-m-workflow-item:nth-of-type(2n) {
+            .qodef-m-workflow-text {
+                align-items: flex-start;
+
+                .qodef-m-circle {
+                    left: 50%;
+                }
+            }
+
+            .qodef-m-workflow-item-inner {
+                &:before {
+                    left: 50%;
+                }
+            }
+        }
+    }
+
+    @include qodefScreenSize680 {
+        .qodef-m-workflow-item {
+            .qodef-m-workflow-item-inner {
+                width: 100%;
+
+                .qodef-m-workflow-text {
+                    align-items: center;
+                    padding: 0;
+
+                    .qodef-m-circle {
+                        display: none;
+                    }
+                }
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include qodefScreenSize480 {
+        .qodef-m-workflow-item {
+            margin-top: 0;
+            padding-bottom: 0;
+
+            .qodef-m-workflow-item-inner {
+                .qodef-m-workflow-image {
+                    width: 100%;
+                }
+
+                .qodef-m-workflow-text {
+                    width: 100%;
+
+                    .qodef-m-title {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+#yith-wcwl-popup-message {
+    background-color: $second-color;
+    border: none;
+    border-radius: 0;
+    color: #ffffff;
+    margin: 0 !important;
+    padding: 35px 58px;
+    transform: translateX(-50%);
+
+    @include qodefHeadingStyle(h5, false);
+}

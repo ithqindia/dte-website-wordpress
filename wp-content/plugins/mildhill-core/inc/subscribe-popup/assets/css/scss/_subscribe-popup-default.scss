@@ -1,0 +1,139 @@
+/* ==========================================================================
+# Subscribe Popup default style
+========================================================================== */
+
+.qodef-sp-holder {
+    align-items: center;
+    background-color: $overlay-color;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 115;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+
+    .qodef-sp-overlay-cover {
+        position: absolute;
+        background-color: rgba(36,66,99,.6);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 80;
+        visibility: hidden;
+        pointer-events: none;
+
+        .qodef-sp-opened & {
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+
+    .qodef-sp-inner {
+        background-image: url('data:image/svg+xml;base64,#{qodefSVG('horizontal-modal')}');
+        box-shadow: $box-shadow;
+        box-sizing: border-box;
+        max-width: 90%;
+        padding: 40px;
+        width: 629px;
+        opacity: 0;
+        transition: .5s;
+        transform: translateY(50px);
+        z-index: 90;
+    }
+
+    #qodef-sp-close {
+        color: #ffffff;
+        display: block;
+        font-size: $closer-widget-size;
+        height: $closer-widget-size;
+        position: absolute;
+        right: 37px;
+        top: 5px;
+
+        @include qodefIconCircleOpenerWidget(true);
+    }
+
+    .qodef-sp-content-container {
+        background-color: $first-color;
+        //background-image: none !important;
+        background-size: cover;
+        padding: 45px 27px 39px 27px;
+    }
+
+    .qodef-sp-title {
+        color: #ffffff;
+        margin: 0 0 5px 0;
+        text-align: center;
+    }
+
+    .qodef-sp-subtitle {
+        color: #ffffff;
+        margin: 0 auto 18px auto;
+        text-align: center;
+        width: 71%;
+    }
+
+    .wpcf7 {
+        input {
+            background-color: #ffffff;
+            color: #afafaf;
+        }
+
+        button {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+
+    .qodef-sp-prevent {
+        @include qodefRelativeLayout();
+
+        margin-top: 13px;
+    }
+
+    .qodef-sp-prevent-inner {
+        cursor: pointer;
+
+        > * {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+        }
+    }
+
+    .qodef-sp-prevent-input {
+        @include qodefCheckbox();
+
+        &.qodef-sp-prevent-clicked {
+            background-color: $second-color !important;
+        }
+    }
+
+    .qodef-sp-prevent-label {
+        @include qodefParagraphStyle();
+        cursor: pointer;
+
+        color: #ffffff;
+    }
+}
+
+/* Popup open/close style */
+
+.qodef-sp-opened {
+    .qodef-sp-holder {
+        opacity: 1;
+        pointer-events: all;
+
+        .qodef-sp-inner {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,222 @@
+/* ==========================================================================
+   WooCommerce widget styles
+   ========================================================================== */
+
+// $wp-widgets-map input-fields-... variables are for select and for search elements
+
+$wp-widgets-area-map: (
+        '': (),
+        '#qodef-page-sidebar' : (
+                link-color: #ffffff,
+                link-hover-color: $second-color,
+        ),
+        '#qodef-page-footer': (
+                link-color: rgba(#ffffff, .5),
+                link-hover-color: #ffffff,
+        )
+);
+
+.widget.woocommerce {
+    .button {
+        @include qodefWooButtonsStyle(normal, fill);
+
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@each $key, $values in $wp-widgets-area-map {
+    $wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+
+    #{$key} .widget {
+
+        .qodef-woo-ratings {
+            @include qodefWooRatingsStyle(map-get($wp-widgets-map-merged, 'link-color'));
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // product list - image, title, rating, price, reviewer
+
+        .product_list_widget {
+            li {
+                position: relative;
+
+                @include qodefClearFix;
+
+                // image
+
+                img {
+                    float: left;
+                    height: map-get($wp-widgets-map-merged, 'thumb-height');
+                    margin-right: map-get($wp-widgets-map-merged, 'thumb-right-margin');
+                    object-fit: cover;
+                    width: map-get($wp-widgets-map-merged, 'thumb-width');
+                }
+
+                // title
+
+                .product-title,
+                a:not(.remove) {
+                    @include qodefWooLabelsHeadingStyle(false);
+                }
+
+                .product-title {
+                    display: inline-block;
+                    width: calc(100% - #{map-get($wp-widgets-map-merged, 'thumb-width')} - #{map-get($wp-widgets-map-merged, 'thumb-right-margin')});
+                }
+
+                // rating
+
+                .qodef-woo-ratings {
+                    display: none;
+                    /*display: inline-block;
+                    margin-top: 10px;
+                    width: calc(100% - #{map-get($wp-widgets-map-merged, 'thumb-width')} - #{map-get($wp-widgets-map-merged, 'thumb-right-margin')});*/
+                }
+
+                // price
+
+                .amount {
+                    display: inline-block;
+                    font-family: $script-font;
+                    font-size: 18px;
+                    margin-top: 8px;
+                    //width: calc(100% - #{map-get($wp-widgets-map-merged, 'thumb-width')} - #{map-get($wp-widgets-map-merged, 'thumb-right-margin')});
+                    width: auto;
+                }
+
+                del, ins {
+                    .amount {
+                        width: auto;
+                    }
+                }
+
+                del {
+                    .amount {
+                        text-decoration: inherit;
+                    }
+                }
+
+                // reviewer
+
+                .reviewer {
+                    display: inline-block;
+                    margin-top: 5px;
+                    width: calc(100% - #{map-get($wp-widgets-map-merged, 'thumb-width')} - #{map-get($wp-widgets-map-merged, 'thumb-right-margin')});
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // shopping cart
+
+        &.widget_shopping_cart {
+            .widget_shopping_cart_content {
+                @include qodefRelativeLayout();
+
+                .remove {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 0;
+                    line-height: 1;
+                    z-index: 2;
+
+                    &:after {
+                        position: relative;
+                        display: block;
+                        padding: 0 3px;
+                        font-family: 'ElegantIcons';
+                        content: "\4d";
+                        font-size: 18px;
+                        line-height: 25px;
+                    }
+                }
+
+                .quantity {
+                    display: inline-block;
+                    line-height: 22px;
+                    margin-top: 8px; // match amount margin
+                    width: calc(100% - 80px - 20px);
+
+                    .amount {
+                        margin-top: 0;
+                    }
+                }
+
+                .total {
+                    margin: 13px 0 0;
+                }
+
+                .buttons {
+                    position: relative;
+                    margin: 21px 0 0;
+
+                    .button:last-child {
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  price filter
+
+        &.widget_price_filter {
+            .price_slider_wrapper {
+                .ui-widget-content {
+                    position: relative;
+                    height: 10px;
+                    background-color: map-get($wp-widgets-map-merged, 'link-color');
+                    border-radius: 0;
+                    cursor: pointer;
+
+                    .ui-slider-handle {
+                        position: absolute;
+                        top: 0;
+                        height: 10px;
+                        width: 15px;
+                        background-color: map-get($wp-widgets-map-merged, 'link-hover-color');
+                        outline: none;
+                        z-index: 2;
+
+                        &:last-of-type {
+                            transform: translateX(-15px); // match handle width
+                        }
+                    }
+
+                    .ui-slider-range {
+                        position: absolute;
+                        display: block;
+                        height: 100%;
+                        background-color: rgba(map-get($wp-widgets-map-merged, 'link-hover-color'), .3);
+                        border-radius: 0;
+                        z-index: 1;
+                    }
+                }
+            }
+
+            .price_slider_amount {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0;
+                flex-direction: column-reverse;
+
+                .price_label {
+                    color: map-get($wp-widgets-map-merged, 'link-color');
+                    margin-top: 19px;
+                }
+
+                button {
+                    margin-top: 19px;
+                }
+
+                .clear {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/* Standard header layout style - start */
+
+#qodef-page-header-inner {
+    .qodef-header-standard--right & {
+        .qodef-header-logo-link {
+            margin-right: auto;
+        }
+    }
+
+    .qodef-header-standard--left & {
+        justify-content: flex-start;
+
+        .qodef-header-navigation {
+            margin-left: 20px;
+        }
+
+        .qodef-widget-holder {
+            margin-left: auto;
+        }
+    }
+}
+
+/* Standard header layout style - end */

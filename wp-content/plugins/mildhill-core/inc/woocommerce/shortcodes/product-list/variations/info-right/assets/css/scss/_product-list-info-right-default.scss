@@ -1,0 +1,127 @@
+//.qodef-woo-product-list {
+//  &.qodef-item-layout--info-right {
+//
+//    .ywpc-countdown-loop {
+//      flex: 0 0 calc(100% - 10px);
+//    }
+//
+//    .ywpc-sale-bar-loop {
+//      flex: 0 0 calc(100% - 10px);
+//    }
+//
+//    .qodef-woo-product-inner {
+//      .qodef-woo-product-image {
+//        flex: 0 0 calc(50% - 10px);
+//      }
+//      .qodef-woo-product-content {
+//        margin-left: 15px;
+//        flex: 0 0 calc(50% - 10px);
+//        display: flex;
+//        flex-wrap: wrap;
+//
+//        .qodef-woo-ratings {
+//          display: flex;
+//        }
+//      }
+//    }
+//
+//    .qodef-woo-product-inner {
+//      display: flex;
+//      flex-wrap: wrap;
+//    }
+//
+//    .qodef-woo-product-inner {
+//      //display: flex;
+//      //flex-direction: row;
+//
+//      .qodef-woo-product-image-inner {
+//        align-content: center;
+//        justify-content: center;
+//
+//        .qodef-woo-buttons-holder {
+//          transition: opacity .2s ease-out;
+//          opacity: 0;
+//        }
+//      }
+//    }
+//
+//    .qodef-woo-product-title-price-holder {
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//
+//      .price {
+//        margin-top: 6px;
+//      }
+//    }
+//
+//    .product {
+//      &:hover {
+//        .qodef-woo-buttons-holder {
+//          opacity: 1;
+//        }
+//      }
+//    }
+//
+//  }
+//}
+
+.qodef-woo-product-list {
+  &.qodef-item-layout--info-right {
+    .qodef-woo-product-inner {
+      width: 100%;
+    }
+
+    .qodef-woo-product-content-outer {
+      position: relative;
+      width: 100%;
+      vertical-align: top;
+      display: flex;
+
+      .qodef-woo-product-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+      }
+      .qodef-woo-product-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .qodef-woo-product-content {
+        margin-left: 18px;
+
+        .price {
+          margin-top: 8px;
+        }
+        .qodef-woo-ratings {
+          margin-top: 14px;
+        }
+      }
+      .qodef-woo-product-image-inner {
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        .qodef-woo-buttons-holder {
+          transition: opacity .2s ease-out;
+          opacity: 0;
+
+          a {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .product {
+      &:hover {
+        .qodef-woo-buttons-holder {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+

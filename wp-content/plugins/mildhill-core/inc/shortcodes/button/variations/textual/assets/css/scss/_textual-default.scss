@@ -1,0 +1,19 @@
+.qodef-button {
+    &.qodef-layout--textual {
+        background-color: transparent;
+        border: 0;
+        color: $first-color;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 0 !important;
+
+        .qodef-m-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &:hover {
+            color: $second-color;
+        }
+    }
+}

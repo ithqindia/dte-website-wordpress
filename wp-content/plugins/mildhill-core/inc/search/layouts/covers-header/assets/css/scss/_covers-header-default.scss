@@ -1,0 +1,172 @@
+/* ==========================================================================
+# Search covers header - start
+========================================================================== */
+
+@keyframes cover_search_fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        z-index: 0;
+    }
+}
+
+@keyframes cover_search_fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        z-index: 100;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+    }
+}
+
+.qodef-search-cover {
+    background-color: #132435; // differs from color set
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: transform .4s;
+    pointer-events: none;
+    transform: translateY(-100%);
+    z-index: 1234;
+
+    &.qodef-covers-search--fadein {
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    .qodef-header--sticky-display #qodef-page-header > & {
+        display: none;
+    }
+
+    .qodef-form-holder {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    input[type="text"] {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        color: $second-color;
+        display: inline-block;
+        float: left;
+        font-family: $heading-font;
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0 0 0 40px;
+        outline: none;
+        outline-offset: 0;
+        padding: 6px 0 6px 18px;
+        vertical-align: middle;
+        width: 90%;
+
+        &:focus {
+            color: $second-color;
+        }
+
+        .qodef-browser--ms-explorer & {
+            color: $second-color;
+        }
+
+        @include qodefPlaceholder {
+            color: inherit;
+        }
+    }
+
+    input[type="submit"] {
+        border: 0 none;
+        clip: rect(0px, 0px, 0px, 0px);
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        position: absolute;
+        visibility: hidden;
+        width: 1px;
+    }
+
+    .qodef-search-close {
+        color: #ffffff;
+        display: block;
+        font-size: $closer-widget-size;
+        height: $closer-widget-size;
+        position: absolute;
+        right: 37px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include qodefIconCircleOpenerWidget(true);
+    }
+}
+
+.qodef-search-area-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 80;
+    visibility: hidden;
+    pointer-events: none;
+
+    &.qodef-search-area-cover--opened {
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+/* ==========================================================================
+# Search covers header - end
+========================================================================== */
+
+.qodef-search--covers-header:not(.qodef-header--sticky-display) {
+    .qodef-page-header-wrapper {
+        position: relative;
+    }
+}
+
+.qodef-search--covers-header.qodef-covers-search--opened {
+    &.qodef-header--sticky-display .qodef-page-header-wrapper > .qodef-search-cover {
+        display: none;
+    }
+
+    &:not(.qodef-header--sticky-display):not(.qodef-header--fixed-display) .qodef-page-header-wrapper #qodef-top-area {
+        pointer-events: none;
+    }
+
+    &:not(.qodef-header--sticky-display):not(.qodef-header--fixed-display) .qodef-page-header-wrapper #qodef-page-header {
+        pointer-events: none;
+    }
+}
+
+.qodef-header--sticky-display .qodef-search-cover {
+    width: 100vw;
+    margin-left: -40px;
+}
+
+.qodef-search--covers-header.qodef-covers-search--fadeout #qodef-top-area,
+.qodef-search--covers-header.qodef-covers-search--fadeout #qodef-page-header,
+.qodef-search--covers-header.qodef-covers-search--fadeout #qodef-page-header .qodef-header-sticky {
+    animation: cover_search_fade_in .3s ease both;
+}
+
+.qodef-header--fixed-display .qodef-search-cover {
+    position: fixed;
+    top: 32px;
+}
+
+.qodef-header--fixed-display #qodef-page-header {
+    z-index: 99;
+}

@@ -1,0 +1,293 @@
+/* ==========================================================================
+   Ratings mixins - start
+   ========================================================================== */
+
+@mixin qodefWooNoticeStyle($reverse:true) {
+    @if ($reverse==true) {
+        flex-direction: row-reverse;
+    } @else {
+        flex-direction: row;
+    }
+
+    border: 1px solid $border-color;
+    color: $first-color;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+
+    a {
+        background-color: transparent !important;
+        border: none !important;
+        color: $first-color !important;
+        font-family: $text-font;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        line-height: 2.077em; // ~ 27px
+        padding: 0 0 0 30px;
+        text-transform: uppercase;
+        transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+        white-space: nowrap;
+
+        &:hover {
+            color: $second-color !important;
+        }
+    }
+
+    @include qodefScreenSize768 {
+        flex-direction: column-reverse;
+
+        a {
+            padding: 20px 0 0 0;
+        }
+    }
+}
+
+@mixin qodefWooButtonsStyle($size: small, $type:null) {
+    @include qodefButtonDefaultStyle();
+    @include qodefButtonSize($size);
+
+    cursor: pointer;
+    z-index: 3;
+
+    @if ($type == 'outline') {
+        @include qodefButtonOutlinedColor();
+
+        &:hover {
+            @include qodefButtonOutlinedHoverColor();
+        }
+    } @else {
+        @include qodefButtonFilledColor(!important);
+
+        &:hover {
+            @include qodefButtonFilledHoverColor(!important);
+        }
+    }
+}
+
+@mixin qodefWooButtonsListStyle($svg,$background-color,$background-hover-color) {
+    $distance-module: 20px;
+
+    display: block;
+    font-size: 0;
+    height: $distance-module * 2;
+    position: relative;
+    width: $distance-module * 2 !important;
+
+    &:before,
+    &:after {
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &:before {
+        background-color: $background-color;
+        border-radius: 50%;
+        content: '';
+        height: $distance-module * 2;
+        left: 0;
+        top: 0;
+        transition: $background-color-transition;
+        width: $distance-module * 2;
+    }
+
+    &:after {
+        content: url('data:image/svg+xml;base64,#{$svg}');
+        height: $distance-module;
+        left: $distance-module  / 2;
+        top: $distance-module  / 2;
+        width: $distance-module;
+    }
+
+    &:hover {
+        &:before {
+            background-color: $background-hover-color;
+        }
+    }
+}
+
+@mixin qodefWooPriceStyle() {
+    align-items: center;
+    color: $third-color;
+    display: flex;
+    position: relative;
+
+    @include qodefHeadingStyle(h6, false);
+
+    del {
+        color: $first-color;
+        margin-right: 10px;
+    }
+
+    ins {
+        color: $third-color;
+        text-decoration: none;
+    }
+}
+
+@mixin qodefWooRatingsStyle($color: $first-color) {
+    line-height: 13px;
+
+    @include qodefRelativeLayout();
+
+    .qodef-m-inner {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .qodef-m-star {
+        @include qodefWooRatingsStarStyle($color);
+
+        &.qodef--active {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+
+@mixin qodefWooRatingsStarStyle($color: null) {
+    font-size: 12px;
+    letter-spacing: .7em;
+
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin qodefWooRatingsStarPseudoStarContent($active: false) {
+    @if ($active) {
+        content: "\e033\e033\e033\e033\e033";
+    } @else {
+        content: "\e031";
+    }
+}
+
+@mixin qodefWooRatingsStarPseudoStyle($color: null) {
+    @if ($color) {
+        @include qodefWooRatingsStarStyle($color);
+    } @else {
+        @include qodefWooRatingsStarStyle();
+    }
+
+    font-family: "ElegantIcons";
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin qodefWooTemplatesHeadingStyle($margin: 0, $is_h3: false) {
+    $heading_tag: h3;
+
+    @if ($is_h3) {
+        @if ($heading_tag != h3) {
+            @include qodefHeadingStyle($heading_tag);
+        }
+    } @else {
+        @include qodefHeadingStyle($heading_tag);
+    }
+
+    margin: $margin;
+}
+
+@mixin qodefWooLabelsHeadingStyle($with-color: true) {
+    $heading_tag: h5;
+
+    @include qodefHeadingStyle($heading_tag, $with-color);
+
+    @include qodefScreenSize480 {
+        @include qodefHeadingStyle(h6, true);
+    }
+}
+
+@mixin qodefWooTableLabelsStyle() {
+    @include qodefParagraphStyle($heading-color);
+}
+
+@mixin qodefWooTemplatesListStyles($margin: 0) {
+    margin: $margin;
+    padding: 0;
+    list-style: none;
+
+    li {
+        position: relative;
+        margin: 0;
+        padding: 15px 0;
+        border-bottom: 1px solid $border-color;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+@mixin qodefWooSelect2Style($width: 283px) {
+    width: auto;
+    min-width: $width;
+    margin: 0;
+}
+
+@mixin qodefWooCheckboxStyle() {
+    background-color: $additional-background-color;
+    border: none;
+    margin: 7px 10px;
+}
+
+@mixin qodefWooRemoveProductButton() {
+    $circle-size: 28px;
+    $font-size: 23px;
+
+    color: #ffffff;
+    display: inline-block;
+    font-size: $font-size;
+    line-height: $circle-size;
+    position: relative;
+    text-align: center;
+    width: $circle-size;
+
+    &:before {
+        background-color: $third-color;
+        border-radius: 50%;
+        content: '';
+        height: $circle-size;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: $background-color-transition;
+        width: $circle-size;
+        z-index: -1;
+    }
+
+    &:hover {
+        &:before {
+            background-color: $third-color-darken;
+        }
+    }
+
+    @include qodefScreenSize480 {
+        $circle-size: 23px;
+        $font-size: 16px;
+
+        font-size: $font-size;
+        line-height: $circle-size;
+        width: $circle-size;
+
+        &:before {
+            height: $circle-size;
+            width: $circle-size;
+        }
+    }
+}
+
+/* ==========================================================================
+   Ratings mixins - end
+   ========================================================================== */
+
+$woo-distance: 7px;

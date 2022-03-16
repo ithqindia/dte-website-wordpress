@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Icon List Item shortcode styles
+   ========================================================================== */
+
+.qodef-icon-list-item {
+    $offset: 20px;
+
+    .qodef-icon-holder {
+        margin-right: $offset;
+        vertical-align: baseline;
+    }
+
+    a:hover {
+        .qodef-m-title,
+        .qodef-m-text {
+            color: $second-color !important;
+        }
+    }
+
+    .qodef-m-title,
+    .qodef-m-text {
+        margin: 0;
+        transition: $color-transition;
+    }
+
+    .qodef-m-title {
+        display: inline-block;
+        margin-right: $offset;
+    }
+
+    .qodef-m-text {
+        display: inline;
+    }
+}

@@ -1,0 +1,79 @@
+/* ==========================================================================
+   YITH Wish List button default styles
+   ========================================================================== */
+
+.yith-wcwl-add-to-wishlist {
+    margin-top: 0;
+
+    .feedback {
+        display: none;
+    }
+
+    a {
+        margin: 0 0 0 5px !important;
+    }
+
+    .yith-wcwl-add-button {
+        a {
+            @include qodefWooButtonsListStyle(qodefSVG('wish-list-add'), $third-color, $third-color-darken);
+        }
+    }
+
+    .yith-wcwl-wishlistaddedbrowse,
+    .yith-wcwl-wishlistexistsbrowse {
+        a {
+            @include qodefWooButtonsListStyle(qodefSVG('wish-list-view'), $third-color, $third-color-darken);
+        }
+    }
+
+    .ajax-loading {
+        display: none !important;
+    }
+
+    .yith-wcwl-wishlistaddresponse {
+        display: none !important;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// on single product and quick view modal
+
+#qodef-woo-page.qodef--single,
+#yith-quick-view-modal {
+    .summary {
+        .yith-wcwl-add-to-wishlist {
+            margin-top: 20px;
+
+            a {
+                @include qodefParagraphStyle($heading-color);
+
+                display: inline-block;
+                line-height: 40px;
+                text-indent: 53px;
+                text-transform: lowercase;
+                width: auto !important;
+
+                &:before {
+                    background-color: $second-color;
+                }
+
+                &:after {
+                    line-height: initial;
+                    text-indent: 0;
+
+                    .qodef-browser--ms-explorer & {
+                        line-height: 25px;
+                    }
+                }
+
+                &:hover {
+                    color: $first-color;
+
+                    &:before {
+                        background-color: $second-color-darken;
+                    }
+                }
+            }
+        }
+    }
+}

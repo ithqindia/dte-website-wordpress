@@ -1,0 +1,114 @@
+.single-portfolio .qodef-page-content-section.qodef-grid-item {
+    margin: 0 !important;
+}
+
+.qodef-portfolio-single-item {
+    .qodef-portfolio-title {
+        margin: 0 0 19px;
+    }
+
+    .qodef-portfolio-content {
+        p {
+            line-height: 22px;
+        }
+    }
+
+    .qodef-portfolio-info {
+        .qodef-e {
+            display: flow-root;
+            margin-bottom: 23px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        h5 {
+            display: inline-flex;
+            margin: 0 18px 0 0; // 22 - 4, inline-flex issue
+        }
+
+        .qodef-portfolio-info-item,
+        .qodef-portfolio-categories,
+        .qodef-portfolio-tags,
+        .qodef-portfolio-date {
+            p {
+                color: $heading-color;
+                display: inline-flex;
+                margin: 0;
+                vertical-align: baseline;
+            }
+        }
+
+        a {
+            display: inline-flex;
+            margin: 0;
+        }
+    }
+
+    .qodef-portfolio-categories .qodef-portfolio-category {
+        &:after {
+            content: ",";
+            margin: 0 3px 0 1px;
+        }
+
+        &:last-child:after {
+            display: none;
+        }
+    }
+
+    .qodef-portfolio-tags .qodef-portfolio-tag {
+        &:after {
+            content: ",";
+            margin: 0 3px 0 1px;
+        }
+
+        &:last-child:after {
+            display: none;
+        }
+    }
+
+    .qodef-social-share {
+        @include qodefIconCircleRainbow();
+
+        display: flex;
+
+        .qodef-social-title {
+            margin-right: 22px;
+        }
+
+        .qodef-shortcode-list {
+            top: -7px;
+        }
+    }
+}
+
+.qodef-portfolio-single-layout {
+    &--gallery-big,
+    &--images-big,
+    &--masonry-big {
+        .qodef-grid.qodef-gutter--small > .qodef-grid-inner > .qodef-grid-item {
+            margin-top: 62px;
+        }
+
+        #qodef-single-portfolio-navigation {
+            margin-top: 56px;
+        }
+    }
+}
+
+.qodef-portfolio-single-layout {
+    &--gallery-small,
+    &--images-small,
+    &--masonry-small {
+
+        .qodef-portfolio-info {
+            //margin-top: 48px;
+        }
+
+        #qodef-single-portfolio-navigation {
+            margin-top: 14px;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.qodef-portfolio-list.qodef-item-layout--info-below.qodef-hover-animation--zoom {
+    .qodef-e-image {
+        overflow: hidden;
+        @include qodefZoomHoverEffect();
+    }
+}

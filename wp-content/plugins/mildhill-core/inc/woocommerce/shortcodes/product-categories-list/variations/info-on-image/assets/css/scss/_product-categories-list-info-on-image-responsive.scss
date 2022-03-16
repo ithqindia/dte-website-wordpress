@@ -1,0 +1,25 @@
+@include qodefScreenSize1280 {
+  .qodef-woo-product-categories-list.qodef-item-layout--info-on-image,
+  .qodef-woo-product-list {
+    .product-category {
+
+      .woocommerce-loop-category__title {
+        padding: 12px 14px;
+
+      }
+    }
+  }
+}
+
+@include qodefScreenSize1280 {
+  .qodef-woo-product-categories-list.qodef-item-layout--info-on-image,
+  .qodef-woo-product-list {
+    .product-category {
+
+      .woocommerce-loop-category__title {
+        padding: 12px 14px;
+
+      }
+    }
+  }
+}

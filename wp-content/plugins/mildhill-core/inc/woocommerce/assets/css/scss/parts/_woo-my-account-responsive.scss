@@ -1,0 +1,34 @@
+/* ==========================================================================
+   WooCommerce my account responsive styles
+   ========================================================================== */
+
+.woocommerce-account {
+
+  @include qodefScreenSize1024 {
+
+    .woocommerce-MyAccount-navigation,
+    .woocommerce-MyAccount-content {
+      width: 100%;
+      float: none;
+    }
+
+    .woocommerce-MyAccount-navigation {
+      padding-right: 0;
+    }
+
+    .woocommerce-MyAccount-content {
+      margin-top: 50px;
+    }
+  }
+
+  @include qodefScreenSize768 {
+    .woocommerce {
+      margin-bottom: 11px;
+    }
+    &.logged-in {
+      .woocommerce-MyAccount-navigation {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

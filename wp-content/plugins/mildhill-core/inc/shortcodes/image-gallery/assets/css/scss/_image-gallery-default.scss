@@ -1,0 +1,31 @@
+.qodef-image-gallery {
+    &.qodef-layout {
+
+        &--justified-gallery {
+            .qodef-image-wrapper {
+                overflow: hidden;
+                @include qodefZoomHoverEffect();
+            }
+        }
+
+        &--masonry {
+            .qodef-image-wrapper {
+                a {
+                    display: block;
+                    height: 100%;
+                    overflow: hidden;
+                    @include qodefZoomHoverEffect();
+                }
+            }
+        }
+    }
+
+    .swiper-pagination-bullets {
+        .swiper-pagination-bullet {
+            &-active,
+            &:hover {
+                background-color: #ffffff;
+            }
+        }
+    }
+}

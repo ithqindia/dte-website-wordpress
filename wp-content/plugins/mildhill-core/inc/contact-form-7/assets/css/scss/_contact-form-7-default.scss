@@ -1,0 +1,31 @@
+/* ==========================================================================
+# Contact Form 7 default style
+========================================================================== */
+
+.wpcf7 {
+    p {
+        margin: 0;
+    }
+
+    &-form-control-wrap {
+        @include qodefRelativeLayout();
+    }
+
+    &-not-valid-tip {
+        color: $failure-color !important;
+        margin: 0 0 18px 0;
+    }
+
+    &-response-output {
+        background-color: $third-color;
+        border: 0 !important;
+        color: #ffffff;
+        line-height: 1em;
+        margin: 36px 0 0 0 !important;
+        padding: 17px 21px !important;
+    }
+
+    .ajax-loader {
+        display: none !important;
+    }
+}

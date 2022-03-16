@@ -1,0 +1,61 @@
+.qodef-banner {
+    @include qodefRelativeLayout();
+
+    .qodef-m-banner-link {
+
+        &:hover {
+        
+            +.qodef-m-image {
+                
+                img {
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+
+    .qodef-m-banner-link {
+        @include qodefAbsoluteLayout();
+
+        display: block;
+        z-index: 1;
+    }
+
+    .qodef-m-content {
+        @include qodefAbsoluteLayout();
+        height: 100%;
+
+        display: block;
+
+        .qodef-m-content-inner {
+            @include qodefAbsoluteLayout();
+
+            display: flex;
+
+            .qodef-m-title {
+                margin: 0;
+            }
+
+            .qodef-m-title-inner {
+                display: inline-block;
+            }
+
+            .qodef-m-subtitle {
+                margin: 12px 0 0 0;
+            }
+        }
+    }
+
+    .qodef-m-image {
+        @include qodefRelativeLayout();
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            display: block;
+            transform: scale(1.01);
+            transition: .5s;
+        }
+    }
+}
+

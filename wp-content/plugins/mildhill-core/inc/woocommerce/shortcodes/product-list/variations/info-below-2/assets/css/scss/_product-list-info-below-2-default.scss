@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Product List Info Below 2 styles
+   ========================================================================== */
+
+.qodef-woo-product-list {
+    &.qodef-item-layout--info-below-2 {
+        .qodef-woo-product-content {
+            margin: 0 0 53px 0;
+        }
+
+        .qodef-woo-product-title {
+            text-align: center;
+        }
+
+        .price {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .qodef-woo-buttons-holder {
+            justify-content: center;
+            margin-top: 11px;
+        }
+    }
+}

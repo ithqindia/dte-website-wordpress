@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Reviews styles
+   ========================================================================== */
+
+.woocommerce-Reviews {
+    #comments {
+        @include qodefCommentsReviewsHolder();
+    }
+
+    .woocommerce-Reviews-title {
+        @include qodefH3Style(); // to match qodef-m-title tag
+        @include qodefCommentsReviewsTitle();
+    }
+
+    .commentlist {
+        @include qodefCommentsReviewsList();
+    }
+
+    .comment,
+    .review {
+        @include qodefCommentsReviewsListItem();
+    }
+
+    .comment_container {
+        @include qodefCommentsReviewsListItemInner();
+
+        > img {
+            @include qodefCommentsReviewsAvatar();
+        }
+    }
+
+    .comment-text {
+        @include qodefCommentsReviewsText();
+    }
+
+    .woocommerce-review {
+        &__author {
+            @include qodefHeadingStyle(h5); // to match qodef-e-title tag
+            @include qodefCommentsReviewsAuthor();
+        }
+
+        &__dash {
+            display: none;
+        }
+
+        &__published-date {
+            @include qodefCommentsReviewsDate();
+        }
+    }
+
+    .description {
+        @include qodefCommentsReviewsDescription();
+    }
+}
+
+#review_form {
+    @include qodefCommentsReviewsFormHolder();
+
+    .comment-reply-title {
+        @include qodefH3Style();
+        @include qodefCommentsReviewsFormTitle();
+    }
+
+    .comment-form {
+        @include qodefCommentsReviewsForm();
+
+        .comment-notes {
+            @include qodefCommentsReviewsFormNotes();
+        }
+
+        .comment-form-cookies-consent {
+            @include qodefCommentsReviewsFormCookies();
+
+        }
+
+        .form-submit {
+            @include qodefCommentsReviewsFormSubmit();
+        }
+    }
+
+    #respond {
+        @include qodefCommentsReviewsRespond(30px);
+    }
+
+    .comment-form-rating {
+        $margin-bottom: 20px;
+
+        label {
+            color: $first-color;
+            float: left;
+            margin: 0 21px $margin-bottom 0;
+            display: inline-block;
+        }
+
+        .stars {
+            line-height: 24px;
+            margin-bottom: $margin-bottom !important;
+            float: left;
+
+            > span {
+                display: flex;
+                overflow: hidden;
+                line-height: inherit;
+            }
+
+            * {
+                line-height: inherit;
+            }
+        }
+
+        a {
+            color: transparent;
+            display: inline-block;
+            font-size: 0;
+            margin: 0;
+            position: relative;
+            vertical-align: top;
+
+            &:before {
+                display: inline-block;
+                overflow: hidden;
+                position: relative;
+                vertical-align: top;
+                z-index: -1;
+
+                @include qodefWooRatingsStarPseudoStarContent();
+                @include qodefWooRatingsStarPseudoStyle($first-color);
+
+                line-height: inherit;
+            }
+
+            &.active {
+                &:after {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    @include qodefWooRatingsStarPseudoStarContent(true);
+                    @include qodefWooRatingsStarPseudoStyle($first-color);
+
+                    line-height: inherit;
+                }
+            }
+        }
+    }
+}

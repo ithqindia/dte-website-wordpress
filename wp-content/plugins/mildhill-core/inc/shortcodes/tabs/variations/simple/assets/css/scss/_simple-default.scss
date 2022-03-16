@@ -1,0 +1,72 @@
+.qodef-tabs.qodef-layout--simple {
+
+    .qodef-tabs-navigation {
+        align-items: flex-start;
+        display: flex;
+        position: relative;
+
+        li {
+            margin: 0 8px 0 0;
+            padding: 0;
+            width: 100%;
+
+            a {
+                background-color: $second-color;
+                color: #ffffff;
+                display: block;
+                padding: 15px 18px;
+                transition: $color-transition, $background-color-transition;
+
+                @include qodefHeadingStyle(h6, false);
+
+                &:hover {
+                    background-color: $box-background-color;
+                    color: #ffffff;
+                }
+            }
+
+            &.ui-state-active a,
+            &.ui-state-hover a {
+                background-color: $box-background-color;
+                color: #ffffff;
+            }
+        }
+    }
+
+    &.qodef-orientation--vertical {
+        align-items: stretch;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+
+        .qodef-tabs-navigation {
+            border-right: 1px solid $border-color;
+            display: block;
+            flex-shrink: 0;
+            margin-right: 26px;
+            padding-right: 26px;
+
+            li {
+                margin-bottom: 8px;
+                width: 100%;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+
+        .qodef-tabs-content {
+            margin-top: 0;
+        }
+    }
+
+    .qodef-tabs-content {
+        margin: 26px 0 0;
+    }
+}

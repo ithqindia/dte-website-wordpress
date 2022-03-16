@@ -1,0 +1,71 @@
+/* ==========================================================================
+   WooCommerce pagination styles
+   ========================================================================== */
+
+#qodef-woo-page {
+    .woocommerce-pagination {
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 36px 0;
+        position: relative;
+
+        ul { // woo pagination on reviews
+            align-items: center;
+            display: flex;
+            list-style-type: none;
+        }
+
+        a, span { // woo pagination on product archives
+            &.page-numbers {
+                color: $first-color;
+                font-family: $heading-font;
+                font-size: 18px;
+                margin: 0 6px;
+                padding: 0 3px;
+                position: relative;
+
+                * { // span containing icon pack class name
+                    display: block;
+                    line-height: inherit;
+                }
+
+                &.prev,
+                &.next {
+                    background-color: $second-color;
+                    border-radius: 50%;
+                    color: #ffffff;
+                    height: 38px;
+                    line-height: 38px;
+                    text-align: center;
+                    transition: $background-color-transition;
+                    width: 38px;
+
+                    &:hover {
+                        background-color: $first-color;
+                    }
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                &.prev {
+                    margin-right: 6px;
+                }
+
+                &.next {
+                    margin-left: 6px;
+                }
+
+                &:not(.prev):not(.next):hover,
+                &.current {
+                    color: $second-color;
+                }
+            }
+        }
+    }
+}

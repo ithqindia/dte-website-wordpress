@@ -1,0 +1,10 @@
+.qodef-blockquote {
+  @include qodefRelativeLayout();
+
+  &.qodef-has-svg {
+    .qodef-m-outer {
+      background-image: url('data:image/svg+xml;base64,#{qodefSVG('blockquote')}');
+      background-size: cover;
+    }
+  }
+}

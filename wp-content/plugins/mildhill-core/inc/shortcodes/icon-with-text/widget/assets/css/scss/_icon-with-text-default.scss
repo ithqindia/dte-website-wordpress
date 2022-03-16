@@ -1,0 +1,32 @@
+$wp-widgets-area-map: (
+        '#qodef-side-area': (
+                link-hover-color: $second-color,
+                link-color: $second-color,
+        )
+);
+
+.widget_mildhill_core_icon_with_text {
+    @each $key, $values in $wp-widgets-area-map {
+        #{$key} .widget & {
+
+            .qodef-m-title {
+                a {
+                    &:hover {
+                        .qodef-m-title-text {
+                            color: map-get($values, 'link-hover-color') !important;
+                        }
+
+                    }
+                    .qodef-m-title-text {
+                        color: map-get($values, 'link-color') !important;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+

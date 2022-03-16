@@ -1,0 +1,43 @@
+@include qodefScreenSize680 {
+    #qodef-single-portfolio-navigation {
+        .qodef-m-inner {
+            .qodef-m-nav {
+                .qodef-icon-elegant-icons {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include qodefScreenSize480 {
+    #qodef-single-portfolio-navigation {
+        .qodef-m-inner {
+            align-items: start;
+            flex-direction: column;
+
+            .qodef-m-nav {
+                margin: 10px 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &.qodef--back-to-link {
+                    left: 0;
+                    position: relative;
+                    top: 0;
+                    transform: translate(0, 0);
+                }
+
+                &.qodef--next {
+                    margin-left: initial;
+                }
+            }
+        }
+    }
+}

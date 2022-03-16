@@ -1,0 +1,44 @@
+.qodef-portfolio-list {
+    &.qodef-items--fixed {
+        .qodef-e-image {
+            //because of the custom padding around item
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .qodef-e-media-image {
+            height: 100%;
+
+            a {
+                height: 100%;
+
+                @include qodefRelativeLayout();
+            }
+        }
+    }
+
+    .qodef-e-content {
+        .qodef-e-info-category {
+            padding: 5px 0;
+
+            .qodef-e-category {
+                color: $first-color;
+                font-family: $script-font;
+                font-size: 18px;
+
+                &:hover {
+                    color: $second-color;
+                }
+            }
+        }
+
+        .qodef-e-title {
+            line-height: 28px;
+            margin: 18px 0 0 0;
+        }
+    }
+
+    .qodef--load-more {
+        margin-top: 35px;
+    }
+}

@@ -1,0 +1,165 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Coming Soon Product\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sun May 01 2016 04:47:58 GMT+0800 (MYT)\n"
+"PO-Revision-Date: Sun May 01 2016 04:48:02 GMT+0800 (MYT)\n"
+"Last-Translator: admin <terrytsang811@gmail.com>\n"
+"Language-Team: \n"
+"Language: English\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: en_US\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "WooCommerce Coming Soon Product"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/coming-soon-product-for-woocommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Display a message, launch date and an URL link to customers saying the "
+"product is \"Coming Soon\""
+msgstr ""
+
+#. Author of the plugin
+msgid "Terry Tsang"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.terrytsang.com"
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:148 ../woocommerce-coming-soon-product.
+#: php:160
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:202
+msgid "Documentation"
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:203
+msgid "Support"
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:204
+msgid "More Free Plugins"
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:268
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires WordPress %s or higher. Please upgrade "
+"your WordPress setup."
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:280
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires WooCommerce to be installed and activatd "
+"first. Please <a href=\"%s\">install WooCommerce</a> first."
+msgstr ""
+
+#: ../woocommerce-coming-soon-product.php:292
+#, php-format
+msgid ""
+"Sorry, <strong>%s</strong> requires WooCommerce %s or higher. Please update "
+"WooCommerce for %s to work."
+msgstr ""
+
+#: ../includes/woocommerce-coming-soon-product-functions.php:27 ..
+#: /includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:37
+msgid "Coming Soon"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:27
+msgid "Set for Coming Soon?"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:29
+msgid "You have to set the stock to \"Out of Stock\"."
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:36
+msgid "Coming Soon Label"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:39
+msgid "Enter the label you want to show if coming soon is set. Default: Coming Soon"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:46
+msgid "Show Countdown Clock?"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:48
+msgid "Enable this to show the clockdown clock for Coming Soon product"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:55
+msgid "Launch Date"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:56
+msgctxt "placeholder"
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:58
+msgid "Set this if countdown clock is enabled"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:68
+msgid "Additional Link Text"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:69
+msgid "Link Text"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:71
+msgid "Enter the link text you want to show below countdown clock. (Optional)"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:78
+msgid "Additional Link URL"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:79
+msgid "Link URL"
+msgstr ""
+
+#: ../includes/admin/post-types/meta-boxes/class-wc-coming-soon-product-meta-box.
+#: php:81
+msgid "Enter the link URL to redirect the user to other page (Optional)"
+msgstr ""

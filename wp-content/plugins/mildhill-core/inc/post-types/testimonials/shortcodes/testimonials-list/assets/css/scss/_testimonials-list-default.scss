@@ -1,0 +1,95 @@
+/* Testimonials list shortcode style - start */
+.qodef-testimonials-list {
+    .qodef-e-inner {
+        margin-top: $precentage-50/2;
+        position: relative;
+    }
+
+    .qodef-e-media-image {
+        height: 0;
+        line-height: 0;
+        padding-left: $precentage-50;
+        padding-top: $precentage-50;
+        position: absolute;
+        transform: translateY(-$precentage-50);
+        width: 0;
+
+        img {
+            border-radius: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transform: translateX($precentage-50);
+        }
+    }
+
+    .qodef-e-content {
+        background-color: $third-color-light;
+        padding: $precentage-50/2 22% 0 22%;
+    }
+
+    .swiper-slide {
+        &:nth-child(2n) {
+            .qodef-e-content {
+                background-color: $second-color-light;
+            }
+        }
+    }
+
+    .qodef-e-title {
+        margin: 20px 0 0 0;
+        text-align: center;
+
+    }
+
+    .qodef-e-text {
+        margin: 0 0 25px;
+        padding-bottom: 62px;
+        text-align: center;
+    }
+
+    .qodef-e-author {
+        margin: 0 0 11px;
+        padding-top: 27px;
+
+        .qodef-e-author-name {
+            display: flex;
+            justify-content: center;
+        }
+
+        .qodef-e-author-job {
+            @include qodefParagraphStyle($first-color);
+
+            display: flex;
+            justify-content: center;
+            padding-top: 5px;
+        }
+    }
+
+    .swiper-pagination-bullets {
+        bottom: 0 !important;
+        text-align: center;
+
+        .swiper-pagination-bullet {
+            &:before {
+                background-color: $first-color;
+            }
+        }
+    }
+
+    &.qodef-skin--light {
+        .qodef-e-title,
+        .qodef-e-text,
+        .qodef-e-author {
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            &:before {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+/* Testimonials list shortcode style - end */

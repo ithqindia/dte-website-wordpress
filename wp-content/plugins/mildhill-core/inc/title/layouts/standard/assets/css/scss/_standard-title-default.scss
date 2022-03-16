@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Standard Title layout styles
+   ========================================================================== */
+
+.qodef-page-title {
+    &.qodef-title--standard {
+        .qodef-m-subtitle {
+            margin: 18px 0 0;
+        }
+
+        &.qodef-title-text--center {
+            .qodef-m-subtitle {
+                font-size: 19px;
+                line-height: 1.42em;
+                margin-left: auto;
+                margin-right: auto;
+                width: 39%;
+            }
+        }
+    }
+}

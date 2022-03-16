@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Social Icons Group widget styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+        '':(
+                link-color: #ffffff,
+                link-hover-color: #ffffff,
+                icon-background-color: $first-color,
+                icon-background-hover-color: $first-color-darken,
+        ),
+        '#qodef-side-area':(
+                link-color: #ffffff,
+                link-hover-color: #ffffff,
+                icon-background-color: $first-color,
+                icon-background-hover-color: $first-color-darken,
+        ),
+        '#qodef-page-sidebar': (
+                link-color: #ffffff,
+                link-hover-color: $first-color,
+                icon-background-color: $first-color-darken,
+                icon-background-hover-color: $second-color,
+        ),
+        '#qodef-page-footer': (
+                link-color: $second-color,
+                link-hover-color: #ffffff,
+                icon-background-color: rgba($first-color-darken, .1),
+                icon-background-hover-color: $first-color-darken,
+        ),
+);
+
+@each $key, $values in $wp-widgets-area-map {
+  #{$key} .widget {
+    &.widget_mildhill_core_social_icons_group {
+
+      .qodef-icon-holder {
+        a {
+          color: map-get($values, 'link-color');
+          transition: $color-transition;
+        }
+
+        &.qodef-layout--circle {
+          @include qodefSocialIconRainbow();
+          //background-color: map-get($values, 'icon-background-color');
+
+          &:hover {
+            background-color: map-get($values, 'icon-background-hover-color');
+
+            a {
+              color: map-get($values, 'link-hover-color');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.qodef-social-icons-group {
+  .qodef-icon-holder {
+    margin-left: 9px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  #qodef-page-sidebar & {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #qodef-page-footer & {
+    .qodef-icon-holder {
+      margin-left: 23px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+    Social Icons Group widget styles
+   ========================================================================== */

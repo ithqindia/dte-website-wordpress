@@ -1,0 +1,113 @@
+.qodef-vss,
+.qodef-vss-responsive {
+    .qodef-m {
+        &-slide {
+            &-image {
+                background-size: cover;
+            }
+
+            &-content {
+                text-align: center;
+                padding: 100px 5%;
+            }
+        }
+
+        &-image {
+            max-height: 90%;
+            width: auto;
+        }
+
+        &-title {
+            display: block;
+            margin: 26px 0 0 0;
+        }
+
+        &-text {
+            margin: 15px 0 0 0;
+        }
+
+        &-button {
+            margin: 22px 0 0 0;
+        }
+    }
+}
+
+// large/small screen
+
+.qodef-vss {
+    height: 100vh;
+    position: relative;
+
+    .ms-tableCell {
+        height: 100% !important; // to override inline from js and make sure it will be full height
+    }
+}
+
+#multiscroll-nav,
+.qodef-vss-responsive {
+    display: none;
+}
+
+//fullscreen menu opened
+.qodef-fullscreen-menu--opened {
+    #multiscroll-nav {
+        z-index: 1;
+    }
+}
+
+// pagination
+
+.qodef-vss--initialized {
+    #multiscroll-nav {
+        display: block;
+
+        &.right {
+            right: 26px;
+        }
+
+        li {
+            height: 11px;
+            margin: 14px;
+            width: 11px;
+        }
+
+        a {
+            span {
+                background-color: $text-color;
+                border: none;
+                height: 11px;
+                left: 0;
+                top: 0;
+                width: 11px;
+            }
+
+            &.active {
+                span {
+                    background-color: $third-color;
+                }
+            }
+        }
+    }
+
+    &.qodef-header {
+        &--light {
+            #multiscroll-nav {
+                a:not(.active) {
+                    span {
+                        background-color: $header-light-color;
+                    }
+                }
+            }
+        }
+
+        &--dark {
+            #multiscroll-nav {
+                a:not(.active) {
+                    span {
+                        background-color: $header-dark-color;
+                    }
+                }
+            }
+        }
+    }
+}

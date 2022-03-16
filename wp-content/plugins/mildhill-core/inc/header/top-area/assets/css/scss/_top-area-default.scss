@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Top area style - begin
+   ========================================================================== */
+
+#qodef-top-area {
+  //align-items: center;
+  background-color: #112234;
+  //display: flex;
+  height: 47px;
+  //justify-content: space-between;
+  padding: $full-width-side-padding;
+  position: relative;
+  z-index: 102; /* Header has Z-index 101, top header has greater value because of dropdown in header top (wpml) */
+
+  #qodef-top-area-inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    //padding: $full-width-side-padding;
+  }
+
+  .widget {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+
+    .textwidget {
+      > * {
+        margin: 0;
+      }
+    }
+  }
+
+  .qodef-top-area-left {
+    .widget {
+      margin-right: 25px;
+    }
+  }
+
+  .qodef-top-area-right {
+    .widget {
+      margin-left: 25px;
+    }
+  }
+}
+
+/* ==========================================================================
+   Top area style - end
+   ========================================================================== */

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   WooCommerce my account styles
+   ========================================================================== */
+
+.woocommerce-account {
+    .woocommerce-MyAccount-navigation {
+        display: inline-block;
+        float: left;
+        padding-right: 50px;
+        position: relative;
+        vertical-align: top;
+        width: 30%;
+
+        ul {
+            @include qodefWooTemplatesListStyles();
+
+            li {
+                a {
+                    @include qodefWooLabelsHeadingStyle(false);
+                }
+
+                &.is-active {
+                    a {
+                        color: $first-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .woocommerce-MyAccount-content {
+        display: inline-block;
+        float: left;
+        position: relative;
+        vertical-align: top;
+        width: 70%;
+
+        h3 {
+            margin-top: 11px;
+        }
+    }
+
+    .button {
+        @include qodefWooButtonsStyle();
+    }
+
+    .woocommerce-form-login {
+        .woocommerce-form__label-for-checkbox {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+
+        .woocommerce-LostPassword {
+            margin: 30px 0 17px 0;
+
+            a {
+                text-decoration: underline;
+                text-transform: capitalize;
+            }
+        }
+
+        .form-row {
+            .woocommerce-form-login__rememberme {
+                display: flex;
+                align-items: center;
+            }
+
+            .woocommerce-form__input-checkbox {
+                margin: 7px 10px;
+            }
+
+            &:nth-child(3) {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+            }
+
+            &:not(:nth-child(3)) {
+                label {
+                    @include qodefHeadingStyle('h5');
+                }
+            }
+        }
+    }
+
+    .woocommerce {
+        h2 {
+            margin: 25px 0 33px;
+        }
+    }
+
+    .woocommerce-EditAccountForm {
+        fieldset {
+            padding: 0;
+            margin: 0;
+
+            legend {
+                display: none;
+            }
+        }
+    }
+
+    &.woocommerce-edit-account {
+        &.logged-in {
+            .woocommerce {
+                margin-top: 19px;
+            }
+
+            .woocommerce-MyAccount-content {
+                margin-top: 14px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+    &.logged-in {
+        .woocommerce {
+            margin-top: 20px;
+        }
+
+        .woocommerce-MyAccount-navigation {
+            margin-bottom: 6px;
+        }
+    }
+}

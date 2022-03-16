@@ -1,0 +1,17 @@
+.qodef-portfolio-single-layout--images-small .qodef-portfolio-single-item {
+    .qodef-media{
+
+        .qodef-popup-item{
+            display: block;
+            margin-bottom: 30px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .qodef-portfolio-info{
+       // margin-top: 48px !important;
+    }
+}

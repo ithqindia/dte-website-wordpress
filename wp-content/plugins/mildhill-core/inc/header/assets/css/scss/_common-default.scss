@@ -1,0 +1,135 @@
+#qodef-page-header-inner {
+    .qodef-header-navigation > ul > li {
+
+        &.qodef-menu-item--hovered {
+            > a {
+                > .qodef-menu-item-inner {
+                    color: $first-color;
+
+                    .qodef-header--light & {
+                        color: #e8f3ff;
+                    }
+
+                    .qodef-header--dark & {
+                        color: $header-dark-hover-color;
+                    }
+                }
+            }
+        }
+
+        > a {
+            > .qodef-menu-item-inner {
+                .qodef-header--light & {
+                    color: $header-light-color;
+                }
+
+                .qodef-header--dark & {
+                    color: $header-dark-color;
+                }
+            }
+
+            &:hover {
+                > .qodef-menu-item-inner {
+                    .qodef-header--light & {
+                        color: #e8f3ff;
+                    }
+
+                    .qodef-header--dark & {
+                        color: $header-dark-hover-color;
+                    }
+                }
+            }
+        }
+
+        &.qodef-hide-link {
+            > a {
+                > .qodef-menu-item-inner {
+                    color: $second-color;
+
+                    .qodef-header--light & {
+                        color: $header-light-color;
+                    }
+
+                    .qodef-header--dark & {
+                        color: $header-dark-color;
+                    }
+                }
+                &:hover {
+                    > .qodef-menu-item-inner {
+                        color: $first-color;
+
+                        .qodef-header--light & {
+                            color: #e8f3ff;
+                        }
+
+                        .qodef-header--dark & {
+                            color: $header-dark-color;
+                        }
+                    }
+                }
+            }
+            &.current-menu-ancestor {
+                > a {
+                    > .qodef-menu-item-inner {
+                        color: $first-color;
+
+                        .qodef-header--light & {
+                            color: $header-light-color
+                        }
+
+                        .qodef-header--dark & {
+                            color: $header-dark-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-widget-holder {
+        align-items: center;
+        display: flex;
+        height: 100%;
+
+        .widget {
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+
+        .qodef-opener-widget {
+            color: $second-color;
+
+            &:hover {
+                color: $heading-color;
+            }
+
+            .qodef-header--light & {
+                color: $header-light-color;
+
+                &:hover {
+                    color: #e8f3ff;
+                }
+            }
+
+            .qodef-header--dark & {
+                color: $header-dark-color;
+
+                &:hover {
+                    color: $header-dark-hover-color;
+                }
+            }
+        }
+    }
+}
+
+#qodef-page-header-inner {
+    &.qodef-content-grid {
+        padding: 0;
+    }
+}
+
+.qodef-header--has-bottom-shadow {
+    #qodef-page-header {
+        box-shadow: $box-shadow-bottom;
+    }
+}

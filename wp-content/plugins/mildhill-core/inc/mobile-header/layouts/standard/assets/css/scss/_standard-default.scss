@@ -1,0 +1,14 @@
+/* Standard header layout style - start */
+
+.qodef-mobile-header--standard #qodef-page-mobile-header {
+    #qodef-page-mobile-header-inner {
+        justify-content: flex-end;
+
+        .qodef-mobile-header-logo-link {
+            //margin-right: auto;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* Standard header layout style - end */

@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Phone Number widget style start
+   ========================================================================== */
+
+//$wp-widgets-area-map: (
+//        '': (
+//                input-fields-text-size: 14,
+//        ),
+//        '#qodef-top-area' : (
+//                input-fields-text-size: 12,
+//        ),
+//);
+//
+//@each $key, $values in $wp-widgets-area-map {
+//    $wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+//
+//    #{$key} .widget {
+//        &.widget_mildhill_core_phone_number {
+//            font-size: #{map-get($wp-widgets-map-merged, 'input-fields-text-size')}px;
+//        }
+//    }
+//}
+
+.widget_mildhill_core_phone_number {
+  #qodef-top-area & {
+    @include qodefIconCircleTopBar(qodefSVG('phone-number-widget'));
+    padding-left: 38px;
+
+  }
+}
+
+/* ==========================================================================
+   Phone Number widget style end
+   ========================================================================== */

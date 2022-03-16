@@ -1,0 +1,54 @@
+.qodef-vss {
+    @mixin responsive-common {
+        display: none;
+
+        + .qodef-vss-responsive {
+            display: block;
+
+            .qodef-m-slide {
+                &-content,
+                &-image {
+                    min-height: 50vh;
+                }
+
+                &-content {
+                    padding: 10%;
+
+                    .qodef-m-text {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include qodefScreenSize1600 {
+        .qodef-m {
+            &-image {
+                max-height: 55%;
+            }
+        }
+    }
+
+    @include qodefScreenSize1366 {
+        .qodef-m {
+            &-image {
+                max-height: 45%;
+            }
+        }
+    }
+
+    @include qodefScreenSize1024 {
+        &.qodef-vss--disable-below-1024 {
+            @include responsive-common;
+        }
+    }
+
+    @include qodefScreenSize768 {
+        &.qodef-vss--disable-below-768 {
+            @include responsive-common;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/* ==========================================================================
+   WooCommerce single styles
+   ========================================================================== */
+
+#qodef-woo-page {
+    &.qodef--single {
+        @include qodefScreenSize1024 {
+            .qodef-woo-single-inner {
+                flex-wrap: wrap;
+            }
+
+            .entry-summary {
+                margin-top: 60px;
+            }
+        }
+
+        @include qodefScreenSize680 {
+            .woocommerce-product-gallery {
+
+                @for $i from 0 to $grid-columns-layout-size {
+                    $column: $i + 1;
+
+                    &.woocommerce-product-gallery--columns-#{$column} {
+                        @if ($column > 3) {
+                            .woocommerce-product-gallery__image {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .woocommerce-tabs .wc-tabs {
+                align-items: flex-start;
+                flex-direction: column;
+
+                li {
+                    margin: 0 0 10px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @include qodefScreenSize480 {
+            .entry-summary form.cart .variations {
+                select {
+                    min-width: auto;
+                }
+            }
+        }
+    }
+}
